@@ -1,5 +1,3 @@
-from ctypes import alignment
-from tkinter import CENTER
 import umap
 from io import BytesIO
 import base64
@@ -12,8 +10,6 @@ import numpy as np
 import pandas as pd
 
 import torch
-from torch.utils.data import TensorDataset, DataLoader
-from torch import nn
 
 output_file(filename="index.html", title="MFAC Interactive Application")
 
