@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.title {
+    font-family: 'proxima-nova', sans-serif;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 300;
+}
