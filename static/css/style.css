@@ -48,7 +48,6 @@ body {
 
 .umap-image-container {
     border: 1px solid black;
-    height: inherit;
     width: 40%;
 
     display: flex;
@@ -62,4 +61,26 @@ body {
 .img2, .img4 {
     background-color: lightcyan;
     height: 25%;
+}
+
+.flipbook-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.flipbook-title {
+    font-size: 30px;
+	font-weight: 300; 
+    text-align: center;
+    padding-top: 5%;
+    margin: auto;
+}
+
+.flipbook{
+    border: 1px solid black;
+    height: 800px;
+    width: 800px;
+
+    margin: 2% auto 2% auto;
 }
