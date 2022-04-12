@@ -1,5 +1,3 @@
-from ctypes import alignment
-from tkinter import CENTER
 import umap
 from io import BytesIO
 import base64
@@ -10,12 +8,9 @@ from bokeh.models import HoverTool, ColumnDataSource, CategoricalColorMapper
 from bokeh.plotting import output_file
 import numpy as np
 import pandas as pd
-
 import torch
-from torch.utils.data import TensorDataset, DataLoader
-from torch import nn
 
-output_file(filename="index.html", title="MFAC Interactive Application")
+output_file(filename="index.html", title="MFAC Interactive UMAP")
 
 x = torch.load("data/" + "x_subset.tensor")
 y = torch.load("data/" + "y_subset.tensor")
@@ -60,9 +55,9 @@ def umapPlot(embedding, x, y, yTrue=None, title=''):
 
     plotFigure = plotting.figure(
         title=title,
-        plot_width=600,
-        plot_height=600,
-        tools=('pan, wheel_zoom, reset')
+        plot_width=800,
+        plot_height=800,
+        tools=('tap, pan, wheel_zoom, reset')
     )
 
     if yTrue is None:
@@ -106,6 +101,7 @@ def umapPlot(embedding, x, y, yTrue=None, title=''):
         'x', 'y',
         source=datasource,
         color=dict(field='class', transform=colorMapping),
+        legend_field='class',
         line_alpha=0.6, fill_alpha=0.6, size=8
     )
     plotting.show(plotFigure)
@@ -113,4 +109,4 @@ def umapPlot(embedding, x, y, yTrue=None, title=''):
     return plotFigure
 
 
-fig = umapPlot(embeddingFish, x.numpy(), y.squeeze().numpy(), title='UMAP projection of the Zebrafish dataset')
+fig = umapPlot(embeddingFish, x.numpy(), y.squeeze().numpy())

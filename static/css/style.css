@@ -1,20 +1,65 @@
-html, body {
-    height: 100%;
-}
-
-html {
-    display: table;
-    margin: auto;
-}
-
 body {
-    display: table-cell;
-    vertical-align: middle;
+    margin: 8%;
+    font-family: 'proxima-nova', sans-serif;
 }
 
 .title {
-    font-family: 'proxima-nova', sans-serif;
-	font-size: 18px;
-	font-size: 1.8rem;
-	font-weight: 300;
+    font-size: 80px;
+    font-weight: 400;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+.subtitle {
+    font-size: 30px;
+    text-align: center;
+}
+
+.intro {
+    margin: 5% auto 5% auto;
+    width: 50%;
+    text-align: center;
+    
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.container-title {
+    display: inline;
+}
+
+.umap-title {
+	font-size: 40px;
+	font-weight: 400; 
+    padding: 2% 0% 2% 0%;
+    text-align: center;
+}
+
+.umap-subtitle {
+    font-size: 30px;
+	font-weight: 300; 
+    padding: 0% 0% 2% 0%;
+    text-align: center;
+}
+
+.umap-image-container {
+    border: 1px solid black;
+    height: inherit;
+    width: 40%;
+
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.img1, .img3 {
+    background-color: lightblue;
+    height: 25%;
+}
+.img2, .img4 {
+    background-color: lightcyan;
+    height: 25%;
 }
