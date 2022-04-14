@@ -28,6 +28,7 @@ body {
     justify-content: space-around;
 }
 
+
 .container-title {
     display: inline;
 }
@@ -37,6 +38,10 @@ body {
 	font-weight: 400; 
     padding: 2% 0% 2% 0%;
     text-align: center;
+}
+
+#padding-above {
+    margin-top: 10%;
 }
 
 .umap-subtitle {
@@ -57,10 +62,20 @@ body {
 .img1, .img3 {
     background-color: lightblue;
     height: 25%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
 }
 .img2, .img4 {
     background-color: lightcyan;
     height: 25%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
 }
 
 .flipbook-container{
@@ -83,4 +98,12 @@ body {
     width: 800px;
 
     margin: 2% auto 2% auto;
+
+    font-size: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+
+    background-color: lightsteelblue;
 }
