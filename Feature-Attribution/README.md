@@ -4,7 +4,7 @@
 
 The pipeline of going from the Zebrafish dataset to interactive UMAP plot is split among two Jupyter Notebooks, the first being meant to be run on Google Colab and the second being meant to run on your local machine due to the fact that Colab fails to generate the Bokeh-based UMAP plot.
 
-The notebooks are:
+The notebooks are (inside of the "Fish-Attribution" Folder):
 * Full_Integrated_Gradients_Attribution_Generation.ipynb
   * Responsible for taking the images and the classifier and creating a tensor that contains the attribution data
 * Full_Interactive_Integrated_Gradients.ipynb
