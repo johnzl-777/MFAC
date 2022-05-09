@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="reset.css" type="text/css" />
-    <link rel="stylesheet" href="index.css" type="text/css" />
-    <link rel="stylesheet" href="gallery.css" type="text/css" />
-    <link rel="stylesheet" href="background.css" type="text/css" />
-    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <link rel="stylesheet" href="css/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="css/background.css" type="text/css" />
+    <link rel="stylesheet" href="css/navbar.css" type="text/css" />
 
     <title>MFAC Interactive Application</title>
   </head>
 
   <body>
     <!-- Bubbles Background -->
-    <div class="area" >
+    <!-- <div class="area" >
         <div class="title">MFAC</div>
         <div class="subtitle">Mutant Fish Attribution and Classification</div>
         <ul class="circles">
@@ -28,14 +28,13 @@
             <li></li>
             <li></li>
         </ul>
-    </div >
+    </div > -->
  
     <!-- Nav Bar -->
-    <div class="tab">
-        <button class="tablinks" onclick="scrollTo('classification')">Classification</button>
-        <button class="tablinks" onclick="scrollTo('featureAttribution')">Feature Attribution</button>
-        <button class="tablinks" onclick="scrollTo('gallery')">Gallery</button>
-        <a href="https://www.google.com/">Navigate to plots</a>
+    <div class="tab" id="navbar">
+      <a class="tablinks" href="#classification">Classification</a>
+      <a class="tablinks" href="#featureAttribution">Feature Attribution</a>
+      <a class="tablinks" href="#gallery">Gallery</a>
     </div>
 
     <div class="container-title">
@@ -45,11 +44,14 @@
             A number of genetic mutations are associated with disease but it is uncertain what their effects are on human development. For this particular project, analysis is being done specifically on mutations related to Autism.          
         </p>
         </div>
+    
+            
     </div>
 <a href="plots.html">click me</a>
     <div class="container">
       <!-- Image Classification UMAP -->
       <div class="container-title" id="classification">
+
         <div class="section-title">Classification</div>
         <div class="section-subtitle">Hover Over the Points on the Plot</div>
         <div class="background">
@@ -224,7 +226,8 @@
     <footer></footer>
 
     <!-- Javascript Files -->
-    <script src="gallery.js"></script>
-    <script src="navbar.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>
