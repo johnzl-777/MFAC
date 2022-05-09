@@ -1,11 +1,18 @@
 /* Style the tab */
-.tab {
+#navbar {
     overflow: hidden;
-    background-color: #AECBE4;
+    background-color: #DCE9F3;
     position: fixed;
     width: 100%;
     top: 0;
+    /* box-shadow: 1px 5px 5px darkblue; */
 }
+
+.floatingNav {
+    width: calc(100vh - 100px); 
+    border-radius: 2px;
+    box-shadow: 0px 1px 10px #999;
+  }
   
 /* Style the buttons that are used to open the tab content */
 .tablinks {
