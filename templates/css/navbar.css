@@ -39,7 +39,9 @@ background-color: #5FA8D3;
     text-decoration: none;
 }
 
-.hamburger {
+
+/* Hamburger menu */
+/* .hamburger {
   position: fixed;
   z-index: 100;
   top: 1rem;
@@ -50,7 +52,7 @@ background-color: #5FA8D3;
   cursor: pointer;
 }
 
-.closeIcon {
+.close-icon {
   display: none;
 }
 
@@ -71,4 +73,4 @@ background-color: #5FA8D3;
 
 .showMenu {
   transform: translateY(0);
-}
+} */
