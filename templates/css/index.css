@@ -74,6 +74,12 @@ body {
     padding-bottom: 10%;
 }
 
+.block-code {
+    background-color: #62B6CB;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
 .section-title {
 	font-size: 45px;
 	font-weight: 400; 
@@ -97,7 +103,6 @@ body {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    background-color: #f1f9ff;
     /* width: 100%; */
 }
 .square-item {
@@ -166,9 +171,9 @@ span {
 }
 
 .block-code a {
-    cursor: pointer;
     text-decoration: none;
     color: #2A2A2C;
+    cursor: pointer;
 }
 
 #code .square-section {
@@ -241,4 +246,20 @@ span {
 
 footer {
     margin: 10%;
+}
+
+.contact p:nth-child(1) {
+    font-size: 20px;
+}
+
+.contact hr {
+    width: 50%;
+    margin-bottom: 2%;
+}
+
+.contact a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #2A2A2C;
+    font-weight: 400;
 }
