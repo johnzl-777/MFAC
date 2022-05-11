@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/reset.css" type="text/css" />
     <link rel="stylesheet" href="css/index.css" type="text/css" />
     <link rel="stylesheet" href="css/gallery.css" type="text/css" />
@@ -12,61 +12,71 @@
   </head>
   <body>
     <!-- Bubbles Background -->
-    <div class="area" >
-        <div class="title">MFAC</div>
-        <div class="subtitle">Mutant Fish Attribution and Classification</div>
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-        <div class="container-title">
-          <!-- <div class="section-title">Objective</div> -->
-          <div class="background" id="title-intro">
+    <div class="area">
+      <div class="title">MFAC</div>
+      <div class="subtitle">Mutant Fish Attribution and Classification</div>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container-title">
+        <!-- <div class="section-title">Objective</div> -->
+        <div class="background" id="title-intro">
           <p>
-              A number of genetic mutations are associated with disease but 
-              it is uncertain what their effects are on human development. 
-              For this particular project, analysis is being done specifically 
-              on mutations related to Autism.          
+            A number of genetic mutations are associated with disease but it is
+            uncertain what their effects are on human development. For this
+            particular project, analysis is being done specifically on mutations
+            related to Autism.
           </p>
-          </div>
+        </div>
       </div>
-    </div >
- 
+    </div>
+
     <!-- Nav Bar -->
     <div class="tab" id="navbar">
       <a class="tablinks" href="#classification">Classification</a>
       <a class="tablinks" href="#featureAttribution">Feature Attribution</a>
       <a class="tablinks" href="#gallery">Gallery</a>
+      <a class="tablinks" href="#project-breakdown">Project Breakdown</a>
       <a class="tablinks" href="#code">Code</a>
-      <a class="tablinks" href="#about">About Us</a>
-      <a class="tablinks" href="#github">GitHub</a>
+      <a class="tablinks" href="https://github.com/Leila-Jadoon/MFAC">GitHub</a>
     </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="fas fa-redo-alt" onclick="topFunction()" id="topBtn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+      class="fas fa-redo-alt"
+      onclick="topFunction()"
+      id="topBtn"
+    >
       <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-      <path d="M54.63 246.6L192 109.3l137.4 137.4C335.6 252.9 343.8 256 352 256s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25l-160-160c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25S42.13 259.1 54.63 246.6zM214.6 233.4c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0L192 301.3l137.4 137.4C335.6 444.9 343.8 448 352 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L214.6 233.4z"/></svg>
+      <path
+        d="M54.63 246.6L192 109.3l137.4 137.4C335.6 252.9 343.8 256 352 256s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25l-160-160c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25S42.13 259.1 54.63 246.6zM214.6 233.4c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0L192 301.3l137.4 137.4C335.6 444.9 343.8 448 352 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L214.6 233.4z"
+      />
+    </svg>
     <!-- <i class="fas fa-4x fa-redo-alt" onclick="topFunction()" id="topBtn"></i> -->
 
     <div class="container">
       <!-- Image Classification UMAP -->
-      <section class="block-classification">
-        <div class="container-title" id="classification">
+      <section class="block-classification" id="classification">
+        <div class="container-title">
           <div class="section-title">Classification</div>
           <div class="section-subtitle">Hover Over the Points on the Plot</div>
           <div class="background">
-              <p class="background-section">Background</p>
-              <p>
-                 The Classification process of trains a model to categorize zebrafish treated with 0, 1, or 2 mutations.
-              </p>
-          </div> 
+            <p class="background-section">Background</p>
+            <p>
+              The Classification process of trains a model to categorize
+              zebrafish treated with 0, 1, or 2 mutations.
+            </p>
+          </div>
         </div>
         <div class="flex-container">
           <div class="umap-plot">
@@ -83,20 +93,20 @@
             <div class="img4">image 4</div>
           </div>
         </div>
-  
       </section>
-      
+
       <!-- Feature Attribution UMAP -->
-      <section class="block-feature-attribution">
-        <div class="container-title"  id="featureAttribution">
+      <section class="block-feature-attribution" id="featureAttribution">
+        <div class="container-title">
           <div class="section-title">Feature Attribution</div>
           <div class="section-subtitle">Hover Over the Points on the Plot</div>
           <div class="background">
-              <p class="background-section">Background</p>
-              <p>
-                 The Feature Attribution process highlights the areas of the image that dominates the classifier's decision-making process.
-              </p>
-          </div> 
+            <p class="background-section">Background</p>
+            <p>
+              The Feature Attribution process highlights the areas of the image
+              that dominates the classifier's decision-making process.
+            </p>
+          </div>
         </div>
         <div class="flex-container">
           <div class="umap-plot">
@@ -114,28 +124,37 @@
           </div>
         </div>
       </section>
-     
 
       <!-- Gallery -->
-      <section class="block-gallery">
-        <div class="container-title" id="gallery">
+      <section class="block-gallery" id="gallery">
+        <div class="container-title">
           <div class="section-title">Gallery</div>
-          <div class="section-subtitle">Filter Through Images Based on the Number of Mutations</div>
+          <div class="section-subtitle">
+            Filter Through Images Based on the Number of Mutations
+          </div>
           <div class="background">
-              <p class="background-section">Background</p>
-              <p>
-                  This gallery shows the images after applying Feature Attribution.
-              </p>
-            </div>
+            <p class="background-section">Background</p>
+            <p>
+              This gallery shows the images after applying Feature Attribution.
+            </p>
+          </div>
         </div>
         <div class="gallery-container">
           <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')">Show All Classes</button>
-            <button class="btn" onclick="filterSelection('zero')">0 Mutations</button>
-            <button class="btn" onclick="filterSelection('one')">1 Mutation</button>
-            <button class="btn" onclick="filterSelection('two')">2 Mutations</button>
+            <button class="btn active" onclick="filterSelection('all')">
+              Show All Classes
+            </button>
+            <button class="btn" onclick="filterSelection('zero')">
+              0 Mutations
+            </button>
+            <button class="btn" onclick="filterSelection('one')">
+              1 Mutation
+            </button>
+            <button class="btn" onclick="filterSelection('two')">
+              2 Mutations
+            </button>
           </div>
-  
+
           <!-- Grid -->
           <div class="flex-container-grid">
             <div class="column zero">
@@ -168,7 +187,7 @@
                 <p>Description</p>
               </div>
             </div>
-  
+
             <div class="column one">
               <div class="content">
                 <img
@@ -199,7 +218,7 @@
                 <p>Description</p>
               </div>
             </div>
-  
+
             <div class="column two">
               <div class="content">
                 <img
@@ -235,8 +254,150 @@
         </div>
         <!-- END GALLERY CONTAINER -->
       </section>
-      
-    </div> 
+      <section class="block-project-breakdown" id="project-breakdown">
+        <div class="container-title">
+          <div class="section-title">Project Breakdown</div>
+          <div class="square-section">
+            <div class="square-item">
+              <div class="square-item-content">
+                <div class="number">1</div>
+                <hr />
+                <div class="square-text">
+                  <span>Image Classification</span>
+                  <br />
+                  <p class="square-description">
+                    ML model is trained to classsify images of zebrafish treated
+                    with 0, 1, or 2 mutations
+                  </p>
+                  <hr />
+                  <div class="members">
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">Alireza Havashemsabadi</span>
+                    </div>
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">Kevin Peng</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="square-item">
+              <div class="square-item-content">
+                <div class="number">2</div>
+                <hr />
+                <div class="square-text">
+                  <span>Feature Attribution</span>
+                  <br />
+                  <p class="square-description">
+                    Highlights the areas of the image that dominates the
+                    classifier's decision-making process
+                  </p>
+                  <hr />
+                  <div class="members">
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">John Long</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="square-item">
+              <div class="square-item-content">
+                <div class="number">3</div>
+                <hr />
+                <div class="square-text">
+                  <span>User Interface</span>
+                  <br />
+                  <p class="square-description">
+                    Displays interactive UMAP that shows the highlighted images
+                    of a fish instance on hover
+                  </p>
+                  <hr />
+                  <div class="members">
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">Leila Jadoon</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block-code" id="code">
+        <div class="container-title">
+          <div class="section-title">Code Jupyter Notebooks</div>
+          <div class="square-section">
+            <a
+              href="https://github.com/Leila-Jadoon/MFAC/blob/main/Classifier/pytorch_fish_classifier.ipynb"
+            >
+              <div class="square-item">
+                <div class="square-item-content">Pytorch Fish Classifier</div>
+              </div>
+            </a>
+            <a
+              href="https://github.com/Leila-Jadoon/MFAC/blob/main/Feature-Attribution/Fish-Attribution/Full_Integrated_Gradients_Attribution_Generation.ipynb"
+            >
+              <div class="square-item">
+                <div class="square-item-content">
+                  Full Integrated Gradients Attribution Generation
+                </div>
+              </div>
+            </a>
+            <a
+              href="https://github.com/Leila-Jadoon/MFAC/blob/main/Feature-Attribution/Fish-Attribution/Full_Interactive_Integrated_Gradients.ipynb"
+            >
+              <div class="square-item">
+                <div class="square-item-content">
+                  Full Interactive Integrated Gradients
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
     <!-- END MAIN CONTAINER -->
     <footer></footer>
 
@@ -244,7 +405,5 @@
     <script src="js/index.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/navbar.js"></script>
-    
-
   </body>
 </html>

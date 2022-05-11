@@ -6,6 +6,7 @@ body {
     font-family: 'proxima-nova', sans-serif;
     background-color: #CAE9FF;
     color: #2A2A2C;
+    font-weight: 300;
 }
 
 .title {
@@ -67,6 +68,12 @@ body {
     padding-bottom: 10%;
 }
 
+.block-project-breakdown {
+    background-color: #f1f9ff;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
 .section-title {
 	font-size: 45px;
 	font-weight: 400; 
@@ -80,6 +87,108 @@ body {
 	font-weight: 300; 
     text-align: center;
     color: white;
+}
+
+.block-project-breakdown .section-title, .block-project-breakdown .section-subtitle {
+    color: #2A2A2C;
+}
+
+.square-section {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    background-color: #f1f9ff;
+    /* width: 100%; */
+}
+.square-item {
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0px 1px 10px #5FA8D3;
+    /* padding: 5%; */
+    /* width: 100%; */
+    margin: 5%;
+}
+
+.square-item-content {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.number {
+    font-size: 40px;
+    font-weight: 200;
+    text-align: center;
+}
+
+hr {
+    width: 100%;
+    height: 3px;
+    background-color: #2A2A2C;
+}
+
+.square-text {
+    padding-top: 10%;
+    text-align: center;
+    font-size: 20px;
+}
+
+span {
+    font-size: 30px;
+    font-weight: 200;
+    display: block;
+    margin-bottom: 5%;
+}
+
+.square-description {
+    padding-bottom: 10%;
+}
+
+.members { 
+    padding-top: 10%;
+}
+
+.member-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.user-icon {
+    height: 100px;
+    width: 100px;
+}
+
+.member-name {
+    font-size: 18px;
+}
+
+.block-code a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #2A2A2C;
+}
+
+#code .square-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#code .square-item {
+    text-align: center;
+}
+
+#code .square-item:hover {
+    background-color: #5FA8D3;
+}
+
+#code .square-item-content {
+    margin-top: 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 #topBtn {
@@ -100,7 +209,7 @@ body {
   }
   
   #topBtn:hover {
-    background-color: #5FA8D3; /* Add a dark-grey background on hover */
+    background-color: #5FA8D3;
   }
 
 .umap-image-container {
