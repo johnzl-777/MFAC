@@ -10,6 +10,17 @@ def moving_average(arr, n=3):
 
 
 def auto_crop(image, target_width=750, target_height=130, xbuffer=15, ybuffer=10):
+    if target_width <= 0:
+        raise ValueError(f'target_width {target_width} must be greater than zero')
+    if target_height <= 0:
+        raise ValueError(f'target_height {target_height} must be greater than zero')
+    if xbuffer <= 0:
+        raise ValueError(f'xbuffer {xbuffer} must be greater than zero')
+    if ybuffer <= 0:
+        raise ValueError(f'ybuffer {ybuffer} must be greater than zero')
+    if image.shape[0] < target_height or image.shape[1] < target_width :
+        raise ValueError(f'Image height and width [{image.shape[0]}, {image.shape[1]}] is smaller than the target height and width [{target_height}, {target_width}]')
+
     edges = sobel(rgb2gray(image))
     columns = np.sum(edges, axis=0)
     smoothed_columns = np.array(moving_average(columns, 2 * xbuffer + 1))
