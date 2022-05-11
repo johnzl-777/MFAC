@@ -52,10 +52,11 @@ body {
 }
 
 .block-classification {
-    background-color: #62B6CB;
+    background-color: #f1f9ff;
     padding-top: 10%;
     padding-bottom: 10%;
 }
+
 .block-feature-attribution{
     background-color: #1B4965;
     padding-top: 10%;
@@ -75,7 +76,7 @@ body {
 }
 
 .block-code {
-    background-color: #62B6CB;
+    background-color: #1B4965;
     padding-top: 10%;
     padding-bottom: 10%;
 }
@@ -95,7 +96,9 @@ body {
     color: white;
 }
 
-.block-project-breakdown .section-title, .block-project-breakdown .section-subtitle {
+
+.block-project-breakdown .section-title, .block-project-breakdown .section-subtitle,
+.block-classification .section-title, .block-classification .section-subtitle {
     color: #2A2A2C;
 }
 
@@ -103,14 +106,11 @@ body {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    /* width: 100%; */
 }
 .square-item {
     border-radius: 20px;
     background-color: white;
     box-shadow: 0px 1px 10px #5FA8D3;
-    /* padding: 5%; */
-    /* width: 100%; */
     margin: 5%;
 }
 
@@ -186,7 +186,7 @@ span {
 }
 
 #code .square-item:hover {
-    background-color: #5FA8D3;
+    background-color: #f1f9ff;
 }
 
 #code .square-item-content {

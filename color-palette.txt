@@ -5,3 +5,4 @@
 5th: #64a6bd
 6th: #ffffff (white)
 7th - text: #2A2A2C
+8th: #f1f9ff;
