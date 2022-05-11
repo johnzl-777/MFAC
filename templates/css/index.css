@@ -43,8 +43,10 @@ body {
 
 .flex-container {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
+    flex-flow: row;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
 }
 
 .container-title {
@@ -219,6 +221,10 @@ span {
     background-color: #5FA8D3;
   }
 
+.umap-plot {
+    /* width: 50%; */
+}
+
 .umap-image-container {
     border: 1px solid black;
     width: 40%;
@@ -274,6 +280,14 @@ footer {
   
 /* Tablet Screen Size */
 @media (max-width: 768px) {
+    .title {
+        font-size: 60px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
     .section-title {
         font-size: 35px;
     }
