@@ -66,7 +66,8 @@ img {
 /* Laptop Screen Size */
 @media (max-width: 1024px) {
   .column {
-    width: 50%;
+    width: 45%;
+    /* padding: 1%; */
   }
 }
 
@@ -74,9 +75,6 @@ img {
 @media (max-width: 768px) {
   .column {
     width: 100%;
-  }
-  h2 {
-    font-size: 30px;
   }
 }
 

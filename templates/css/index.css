@@ -24,7 +24,7 @@ body {
 
 .background {
     margin: 2% auto 2% auto;
-    padding: 50px;
+    padding: 3%;
     width: 50%;
     border-radius: 20px;
     text-align: left;
@@ -265,3 +265,41 @@ footer {
     color: #2A2A2C;
     font-weight: 400;
 }
+
+/* -------------------------------------------------- */
+/* Screen Size */
+/* Laptop Screen Size */
+@media (max-width: 1024px) {
+}
+  
+/* Tablet Screen Size */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 35px;
+    }
+    .section-subtitle {
+        font-size: 20px;
+    }
+
+    .background p {
+        font-size: 14px;
+    } 
+
+    .background {
+        margin: 2% auto 2% auto;
+        /* padding: 50px; */
+        width: 50%;
+        border-radius: 20px;
+        text-align: left;
+        background-color: #CAE9FF;
+    }
+    .square-section {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+    }
+}
+
+/* Mobile Screen Size */
+@media (max-width: 480px) {
+} 
