@@ -1,8 +1,8 @@
 .area {
-    background: #AECBE4;  
-    background: -webkit-linear-gradient(to left, #DCE9F3, #E8F0F7);  
+    background: #5FA8D3;  
+    /* background: -webkit-linear-gradient(to left, #DCE9F3, #E8F0F7);   */
     width: 100%;
-    height:30vh;
+    height:90vh;
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -24,9 +24,10 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: #CAE9FF;
+    /* background: rgba(255, 255, 255, 0.2); */
     animation: animate 5s linear infinite;
-    top: 30vh;
+    top: 80vh;
 }
 
 .circles li:nth-child(1){

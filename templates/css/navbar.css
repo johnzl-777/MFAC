@@ -1,7 +1,7 @@
 /* Style the tab */
 #navbar {
     overflow: hidden;
-    background-color: #DCE9F3;
+    background-color: #CAE9FF;
     position: fixed;
     width: 100%;
     top: 0;
@@ -10,7 +10,7 @@
 .floatingNav {
     width: calc(100vh - 100px); 
     border-radius: 2px;
-    box-shadow: 0px 1px 10px #999;
+    box-shadow: 0px 1px 10px #5FA8D3;
   }
   
 /* Style the buttons that are used to open the tab content */
@@ -25,11 +25,12 @@
     text-decoration: none;
     font-weight: 300;
     font-size: 18px;
+    color: #2A2A2C;
 }
 
 /* Change background color of buttons on hover */
 .tablinks:hover {
-background-color: #AECBE4;
+background-color: #5FA8D3;
 }
 
 .tablinks:visited {

@@ -1,0 +1,7 @@
+1st - main background color: #CAE9FF
+2nd - main accent color (buttons): #5FA8D3
+3rd: #62B6CB
+4th: #1B4965
+5th: #64a6bd
+6th: #ffffff (white)
+7th - text: #2A2A2C

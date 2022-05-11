@@ -12,7 +12,7 @@
   </head>
   <body>
     <!-- Bubbles Background -->
-    <!-- <div class="area" >
+    <div class="area" >
         <div class="title">MFAC</div>
         <div class="subtitle">Mutant Fish Attribution and Classification</div>
         <ul class="circles">
@@ -27,13 +27,27 @@
             <li></li>
             <li></li>
         </ul>
-    </div > -->
+        <div class="container-title">
+          <!-- <div class="section-title">Objective</div> -->
+          <div class="background" id="title-intro">
+          <p>
+              A number of genetic mutations are associated with disease but 
+              it is uncertain what their effects are on human development. 
+              For this particular project, analysis is being done specifically 
+              on mutations related to Autism.          
+          </p>
+          </div>
+      </div>
+    </div >
  
     <!-- Nav Bar -->
     <div class="tab" id="navbar">
       <a class="tablinks" href="#classification">Classification</a>
       <a class="tablinks" href="#featureAttribution">Feature Attribution</a>
       <a class="tablinks" href="#gallery">Gallery</a>
+      <a class="tablinks" href="#code">Code</a>
+      <a class="tablinks" href="#about">About Us</a>
+      <a class="tablinks" href="#github">GitHub</a>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="fas fa-redo-alt" onclick="topFunction()" id="topBtn">
@@ -41,188 +55,187 @@
       <path d="M54.63 246.6L192 109.3l137.4 137.4C335.6 252.9 343.8 256 352 256s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25l-160-160c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25S42.13 259.1 54.63 246.6zM214.6 233.4c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0L192 301.3l137.4 137.4C335.6 444.9 343.8 448 352 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L214.6 233.4z"/></svg>
     <!-- <i class="fas fa-4x fa-redo-alt" onclick="topFunction()" id="topBtn"></i> -->
 
-    <div class="container-title">
-        <div class="section-title">Objective</div>
-        <div class="background">
-        <p>
-            A number of genetic mutations are associated with disease but it is uncertain what their effects are on human development. For this particular project, analysis is being done specifically on mutations related to Autism.          
-        </p>
-        </div>
-    </div>
-<a href="plots.html">click me</a>
     <div class="container">
       <!-- Image Classification UMAP -->
-      <div class="container-title" id="classification">
-
-        <div class="section-title">Classification</div>
-        <div class="section-subtitle">Hover Over the Points on the Plot</div>
-        <div class="background">
-            <p class="background-section">Background</p>
-            <p>
-               The Classification process of trains a model to categorize zebrafish treated with 0, 1, or 2 mutations.
-            </p>
-        </div> 
-      </div>
-      <div class="flex-container">
-        <div class="umap-plot">
-          <div
-            class="bk-root"
-            id="ea2162a2-ddc9-4e2d-9d76-f24804e2dc00"
-            data-root-id="1004"
-          ></div>
+      <section class="block-classification">
+        <div class="container-title" id="classification">
+          <div class="section-title">Classification</div>
+          <div class="section-subtitle">Hover Over the Points on the Plot</div>
+          <div class="background">
+              <p class="background-section">Background</p>
+              <p>
+                 The Classification process of trains a model to categorize zebrafish treated with 0, 1, or 2 mutations.
+              </p>
+          </div> 
         </div>
-        <div class="umap-image-container">
-          <div class="img1">image 1</div>
-          <div class="img2">image 2</div>
-          <div class="img3">image 3</div>
-          <div class="img4">image 4</div>
+        <div class="flex-container">
+          <div class="umap-plot">
+            <div
+              class="bk-root"
+              id="ea2162a2-ddc9-4e2d-9d76-f24804e2dc00"
+              data-root-id="1004"
+            ></div>
+          </div>
+          <div class="umap-image-container">
+            <div class="img1">image 1</div>
+            <div class="img2">image 2</div>
+            <div class="img3">image 3</div>
+            <div class="img4">image 4</div>
+          </div>
         </div>
-      </div>
-
+  
+      </section>
+      
       <!-- Feature Attribution UMAP -->
-      <div class="container-title"  id="featureAttribution">
-        <div class="section-title">Feature Attribution</div>
-        <div class="section-subtitle">Hover Over the Points on the Plot</div>
-        <div class="background">
-            <p class="background-section">Background</p>
-            <p>
-               The Feature Attribution process highlights the areas of the image that dominates the classifier's decision-making process.
-            </p>
-        </div> 
-      </div>
-      <div class="flex-container">
-        <div class="umap-plot">
-          <div
-            class="bk-root"
-            id="ea2162a2-ddc9-4e2d-9d76-f24804e2dc001"
-            data-root-id="1004"
-          ></div>
+      <section class="block-feature-attribution">
+        <div class="container-title"  id="featureAttribution">
+          <div class="section-title">Feature Attribution</div>
+          <div class="section-subtitle">Hover Over the Points on the Plot</div>
+          <div class="background">
+              <p class="background-section">Background</p>
+              <p>
+                 The Feature Attribution process highlights the areas of the image that dominates the classifier's decision-making process.
+              </p>
+          </div> 
         </div>
-        <div class="umap-image-container">
-          <div class="img1">image 1</div>
-          <div class="img2">image 2</div>
-          <div class="img3">image 3</div>
-          <div class="img4">image 4</div>
+        <div class="flex-container">
+          <div class="umap-plot">
+            <div
+              class="bk-root"
+              id="ea2162a2-ddc9-4e2d-9d76-f24804e2dc001"
+              data-root-id="1004"
+            ></div>
+          </div>
+          <div class="umap-image-container">
+            <div class="img1">image 1</div>
+            <div class="img2">image 2</div>
+            <div class="img3">image 3</div>
+            <div class="img4">image 4</div>
+          </div>
         </div>
-      </div>
+      </section>
+     
 
       <!-- Gallery -->
-      <div class="container-title" id="gallery">
-        <div class="section-title">Gallery</div>
-        <div class="section-subtitle">Filter Through Images Based on the Number of Mutations</div>
-        <div class="background">
-            <p class="background-section">Background</p>
-            <p>
-                This gallery shows the images after applying Feature Attribution.
-            </p>
-          </div>
-      </div>
-      <div class="gallery-container">
-        <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')">Show All Classes</button>
-          <button class="btn" onclick="filterSelection('zero')">0 Mutations</button>
-          <button class="btn" onclick="filterSelection('one')">1 Mutation</button>
-          <button class="btn" onclick="filterSelection('two')">2 Mutations</button>
+      <section class="block-gallery">
+        <div class="container-title" id="gallery">
+          <div class="section-title">Gallery</div>
+          <div class="section-subtitle">Filter Through Images Based on the Number of Mutations</div>
+          <div class="background">
+              <p class="background-section">Background</p>
+              <p>
+                  This gallery shows the images after applying Feature Attribution.
+              </p>
+            </div>
         </div>
-
-        <!-- Grid -->
-        <div class="flex-container-grid">
-          <div class="column zero">
-            <div class="content">
-              <img
-                src="https://a-z-animals.com/media/2021/10/Flowerhorn-header-2.jpg"
-                alt="Zebrafish with 0 Mutations"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
+        <div class="gallery-container">
+          <div id="myBtnContainer">
+            <button class="btn active" onclick="filterSelection('all')">Show All Classes</button>
+            <button class="btn" onclick="filterSelection('zero')">0 Mutations</button>
+            <button class="btn" onclick="filterSelection('one')">1 Mutation</button>
+            <button class="btn" onclick="filterSelection('two')">2 Mutations</button>
+          </div>
+  
+          <!-- Grid -->
+          <div class="flex-container-grid">
+            <div class="column zero">
+              <div class="content">
+                <img
+                  src="https://a-z-animals.com/media/2021/10/Flowerhorn-header-2.jpg"
+                  alt="Zebrafish with 0 Mutations"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+            <div class="column zero">
+              <div class="content">
+                <img
+                  src="https://a-z-animals.com/media/2021/10/Flowerhorn-header-2.jpg"
+                  alt="Zebrafish with 0 Mutations"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+            <div class="column zero">
+              <div class="content">
+                <img
+                  src="https://a-z-animals.com/media/2021/10/Flowerhorn-header-2.jpg"
+                  alt="Zebrafish with 0 Mutations"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+  
+            <div class="column one">
+              <div class="content">
+                <img
+                  src="https://images.news18.com/ibnlive/uploads/2021/12/rare-pink-handfish.jpg"
+                  alt="Zebrafish with 1 Mutation"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+            <div class="column one">
+              <div class="content">
+                <img
+                  src="https://images.news18.com/ibnlive/uploads/2021/12/rare-pink-handfish.jpg"
+                  alt="Zebrafish with 1 Mutation"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+            <div class="column one">
+              <div class="content">
+                <img
+                  src="https://images.news18.com/ibnlive/uploads/2021/12/rare-pink-handfish.jpg"
+                  alt="Zebrafish with 1 Mutation"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+  
+            <div class="column two">
+              <div class="content">
+                <img
+                  src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                  alt="Zebrafish with 2 Mutations"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+            <div class="column two">
+              <div class="content">
+                <img
+                  src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                  alt="Zebrafish with 2 Mutations"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
+            </div>
+            <div class="column two">
+              <div class="content">
+                <img
+                  src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                  alt="Zebrafish with 2 Mutations"
+                />
+                <h4>Name</h4>
+                <p>Description</p>
+              </div>
             </div>
           </div>
-          <div class="column zero">
-            <div class="content">
-              <img
-                src="https://a-z-animals.com/media/2021/10/Flowerhorn-header-2.jpg"
-                alt="Zebrafish with 0 Mutations"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-          <div class="column zero">
-            <div class="content">
-              <img
-                src="https://a-z-animals.com/media/2021/10/Flowerhorn-header-2.jpg"
-                alt="Zebrafish with 0 Mutations"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-
-          <div class="column one">
-            <div class="content">
-              <img
-                src="https://images.news18.com/ibnlive/uploads/2021/12/rare-pink-handfish.jpg"
-                alt="Zebrafish with 1 Mutation"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-          <div class="column one">
-            <div class="content">
-              <img
-                src="https://images.news18.com/ibnlive/uploads/2021/12/rare-pink-handfish.jpg"
-                alt="Zebrafish with 1 Mutation"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-          <div class="column one">
-            <div class="content">
-              <img
-                src="https://images.news18.com/ibnlive/uploads/2021/12/rare-pink-handfish.jpg"
-                alt="Zebrafish with 1 Mutation"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-
-          <div class="column two">
-            <div class="content">
-              <img
-                src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                alt="Zebrafish with 2 Mutations"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-          <div class="column two">
-            <div class="content">
-              <img
-                src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                alt="Zebrafish with 2 Mutations"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
-          <div class="column two">
-            <div class="content">
-              <img
-                src="https://images.unsplash.com/photo-1516408388733-2f8364f2e00b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                alt="Zebrafish with 2 Mutations"
-              />
-              <h4>Name</h4>
-              <p>Description</p>
-            </div>
-          </div>
+          <!-- END GRID -->
         </div>
-        <!-- END GRID -->
-      </div>
-      <!-- END GALLERY CONTAINER -->
+        <!-- END GALLERY CONTAINER -->
+      </section>
+      
     </div> 
     <!-- END MAIN CONTAINER -->
     <footer></footer>
