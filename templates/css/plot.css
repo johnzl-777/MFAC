@@ -1,3 +1,38 @@
-.bk-root {
-    margin: auto;
+body {
+    background: #5FA8D3;  
+    font-family: "proxima-nova", sans-serif;
+
+}
+
+.umap-plot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;    
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    color: white;
+    margin-bottom: 2%;
+    text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* Screen Size */
+/* Laptop Screen Size */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 60px;
+      }
+}
+
+/* Tablet Screen Size */
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+      }
 }
