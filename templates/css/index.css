@@ -232,7 +232,7 @@ a.umap-plot {
     text-decoration: none;
     color: #2a2a2c;
     cursor: pointer;
-    padding: 2%;
+    padding: 4%;
     background-color:#cae9ff;
     border-radius: 10px;
 }
@@ -247,7 +247,6 @@ a.umap-plot:active {
 
 .umap-link-container button {
   cursor: pointer;
-  padding: 2%;
   background-color:#cae9ff;
   
 }

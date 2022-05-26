@@ -1,7 +1,7 @@
 body {
+    margin-top: 10%;    
     background: #5FA8D3;  
     font-family: "proxima-nova", sans-serif;
-
 }
 
 .umap-plot {
@@ -9,7 +9,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;    
 }
 
 .title {
@@ -17,8 +16,25 @@ body {
     font-weight: 300;
     letter-spacing: 10px;
     color: white;
-    margin-bottom: 2%;
     text-align: center;
+}
+
+.subtitle {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+  }
+
+.sub-subtitle {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+}
+
+.bk-root {
+    margin-top: 2%;
 }
 
 /* -------------------------------------------------- */
