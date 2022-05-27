@@ -1,68 +1,1005 @@
-// Execute the function and show all columns
-filterSelection("all"); 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/index.css" type="text/css" />
+    <link rel="stylesheet" href="css/gallery.css" type="text/css" />
+    <link rel="stylesheet" href="css/background.css" type="text/css" />
+    <link rel="stylesheet" href="css/navbar.css" type="text/css" />
 
-function filterSelection(c) {
-	let x, i;
-	x = document.getElementsByClassName("column");
-	if (c == "all") 
-		c = "";
-	// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-	for (i = 0; i < x.length; i++) {
-		removeClass(x[i], "show");
-		if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
-	}
-}
+    <title>MFAC</title>
+  </head>
+  <body>
+    <!-- Bubbles Background -->
+    <div class="area">
+      <div class="title">MFAC</div>
+      <div class="subtitle">Mutant Fish Attribution and Classification</div>
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="container-title">
+        <div class="background" id="title-intro">
+          <p>
+            A number of genetic mutations are associated with disease but it is
+            uncertain what their effects are on human development. For this
+            particular project, analysis is being done specifically on mutations
+            related to Autism.
+          </p>
+        </div>
+      </div>
+    </div>
 
-// Show filtered elements
-function addClass(element, name) {
-	let i, arr1, arr2;
-	arr1 = element.className.split(" ");
-	arr2 = name.split(" ");
-	for (i = 0; i < arr2.length; i++) {
-		if (arr1.indexOf(arr2[i]) == -1) {
-			element.className += " " + arr2[i];
-		}
-  }
-}
+    <!-- Nav Bar -->
+    <nav class="tab menu" id="navbar">
+      <a class="tablinks menuItem" href="#classification">Classification</a>
+      <a class="tablinks menuItem" href="#featureAttribution"
+        >Feature Attribution</a
+      >
+      <a class="tablinks menuItem" href="#gallery">Gallery</a>
+      <a class="tablinks menuItem" href="#project-breakdown"
+        >Project Breakdown</a
+      >
+      <a class="tablinks menuItem" href="#code">Code</a>
+      <a class="tablinks menuItem" href="https://github.com/Leila-Jadoon/MFAC"
+        >GitHub</a
+      >
+    </nav>
+    <button class="hamburger">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 448 512"
+        class="menu-icon"
+      >
+        <path
+          d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"
+        />
+      </svg>
 
-// Hide elements that are not selected
-function removeClass(element, name) {
-	let i, arr1, arr2;
-	arr1 = element.className.split(" ");
-	arr2 = name.split(" ");
-	for (i = 0; i < arr2.length; i++) {
-		while (arr1.indexOf(arr2[i]) > -1) {
-		arr1.splice(arr1.indexOf(arr2[i]), 1);
-		}
-	}
-	element.className = arr1.join(" ");
-}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 320 512"
+        class="close-icon"
+      >
+        <path
+          d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+        />
+      </svg>
+    </button>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+      class="fas fa-redo-alt"
+      onclick="topFunction()"
+      id="topBtn"
+    >
+      <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+      <path
+        d="M54.63 246.6L192 109.3l137.4 137.4C335.6 252.9 343.8 256 352 256s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25l-160-160c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25S42.13 259.1 54.63 246.6zM214.6 233.4c-12.5-12.5-32.75-12.5-45.25 0l-160 160c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0L192 301.3l137.4 137.4C335.6 444.9 343.8 448 352 448s16.38-3.125 22.62-9.375c12.5-12.5 12.5-32.75 0-45.25L214.6 233.4z"
+      />
+    </svg>
+    <!-- <i class="fas fa-4x fa-redo-alt" onclick="topFunction()" id="topBtn"></i> -->
 
-// Add active class to the current button (highlight it)
-let btnContainer1 = document.getElementById("mutation-filter");
-if (btnContainer1 !== null) {
-	let btns = btnContainer1.getElementsByClassName("mutation-btn");
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener("click", function () {
-			var current = document.getElementsByClassName("mutation-active");
-			current[0].className = current[0].className.replace(" mutation-active", "");
-			this.className += " mutation-active";
-		});
-	}	
-}
+    <div class="container">
+      <!-- Image Classification UMAP -->
+      <section class="block-classification" id="classification">
+        <div class="container-title">
+          <div class="section-title">Classification</div>
+          <div class="section-subtitle">Select a Plot</div>
+          <div class="background">
+            <p class="background-section">Background</p>
+            <p>
+              The Classification process trains a model to categorize zebrafish
+              treated with 0, 1, or 2 mutations.
+            </p>
+            <br>
+            <p>**Plot will be added shortly**</p>
+          </div>
+        </div>
+        <div class="flex-container">
+            <div class="umap-link-container">
+                <a
+                  href=""
+                  class="umap-plot"
+                >
+                  TBD
+                </a>
+        </div>
+      </section>
 
-// Add active class to the current button (highlight it)
-let btnContainer2 = document.getElementById("attribution-filter");
-if (btnContainer2 !== null) {
-	let btns = btnContainer2.getElementsByClassName("attribution-btn");
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener("click", function () {
-			var current = document.getElementsByClassName("attribution-active");
-			current[0].className = current[0].className.replace(" attribution-active", "");
-			this.className += " attribution-active";
-		});
-	}	
-}
+      <!-- Feature Attribution UMAP -->
+      <section class="block-feature-attribution" id="featureAttribution">
+        <div class="container-title">
+          <div class="section-title">Feature Attribution</div>
+          <div class="section-subtitle">Select a Plot</div>
+          <div class="background">
+            <p class="background-section">Background</p>
+            <p>
+              The Feature Attribution process highlights the areas of the image
+              that dominates the classifier's decision-making process.
+            </p>
+          </div>
+        </div>
+        <div class="flex-container">
+          <div class="umap-link-container">
+            <a
+              href="bokeh-html/model1e-050.5.2022-05-11 13_52_21.deconvolution.html"
+              class="umap-plot"
+            >
+              Deconvolution
+            </a>
 
-// TODO: fix active button display - could be js or css problem
-// TODO: add function to filter by mutation before filtering by attribution - or make them compounding somehow 
+            <a
+              href="bokeh-html/model1e-050.5.2022-05-11 13_52_21.deeplift.html"
+              class="umap-plot"
+            >
+              Deeplift
+            </a>
+
+            <a
+              href="bokeh-html/model1e-050.5.2022-05-11 13_52_21.guided-backprop.html"
+              class="umap-plot"
+            >
+              Guided Backprop
+            </a>
+
+            <a
+              href="bokeh-html/model1e-050.5.2022-05-11 13_52_21.input_x_gradient.html"
+              class="umap-plot"
+            >
+              Input X Gradient
+            </a>
+
+            <a
+              href="bokeh-html/model1e-050.5.2022-05-11 13_52_21.saliency.html"
+              class="umap-plot"
+            >
+              Saliency
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section class="block-gallery" id="gallery">
+        <div class="container-title">
+          <div class="section-title">Gallery</div>
+          <div class="section-subtitle">
+            Filter Through Images Based on the Number of Mutations
+          </div>
+          <div class="background">
+            <p class="background-section">Background</p>
+            <p>
+              This gallery shows the images after applying Feature Attribution.
+            </p>
+          </div>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-filter-menu">
+                <div id="mutation-filter">
+                    <button class="mutation-btn mutation-active" onclick="filterSelection('all')">
+                    Show All Classes
+                    </button>
+                    <button class="mutation-btn" onclick="filterSelection('zero')">
+                    0 Mutations
+                    </button>
+                    <button class="mutation-btn" onclick="filterSelection('one')">
+                    1 Mutation
+                    </button>
+                    <button class="mutation-btn" onclick="filterSelection('two')">
+                    2 Mutations
+                    </button>
+                </div>
+                
+                <div id="attribution-filter">
+                    <button class="attribution-btn attribution-active" onclick="filterSelection('deconvolution')">
+                        Deconvolution
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('deeplift')">
+                        Deeplift
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('guided-backprop')">
+                        Guided Backprop
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('input-x-gradient')">
+                        Input X Gradient
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('integrated-gradients')">
+                        Integrated Gradients
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('saliency')">
+                        Saliency
+                    </button>
+                </div>
+          </div>
+
+          <!-- Grid -->
+          <div class="flex-container-grid">
+            <!-- Class 0 -->
+            <!-- Deconvolution -->
+            <div class="column zero deconvolution">
+              <div class="content">
+                <img
+                  src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 0.png"
+                  alt="Zebrafish with 0 Mutations, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column zero deconvolution">
+              <div class="content">
+                <img
+                  src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 1.png"
+                  alt="Zebrafish with 0 Mutations, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column zero deconvolution">
+              <div class="content">
+                <img
+                  src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 2.png"
+                  alt="Zebrafish with 0 Mutations, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column zero deconvolution">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 3.png"
+                    alt="Zebrafish with 0 Mutations, Deconvolution"
+                  />
+                </div>
+            </div>
+            <!-- Deeplift -->
+            <div class="column zero deeplift">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 0.png"
+                    alt="Zebrafish with 0 Mutations, Deeplift"
+                  />
+                </div>
+              </div>
+              <div class="column zero deeplift">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 1.png"
+                    alt="Zebrafish with 0 Mutations, Deeplift"
+                  />
+                </div>
+              </div>
+              <div class="column zero deeplift">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 2.png"
+                    alt="Zebrafish with 0 Mutations, Deeplift"
+                  />
+                </div>
+              </div>
+              <div class="column zero deeplift">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 3.png"
+                      alt="Zebrafish with 0 Mutations, Deeplift"
+                    />
+                  </div>
+              </div>
+            <!-- Guided Backprop -->
+            <div class="column zero guided-backprop">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 0.png"
+                    alt="Zebrafish with 0 Mutations, Guided Backprop"
+                  />
+                </div>
+              </div>
+              <div class="column zero guided-backprop">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 1.png"
+                    alt="Zebrafish with 0 Mutations, Guided Backprop"
+                  />
+                </div>
+              </div>
+              <div class="column zero guided-backprop">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 2.png"
+                    alt="Zebrafish with 0 Mutations, Guided Backprop"
+                  />
+                </div>
+              </div>
+              <div class="column zero guided-backprop">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 3.png"
+                      alt="Zebrafish with 0 Mutations, Guided Backprop"
+                    />
+                  </div>
+              </div>
+            <!-- Input X Gradient-->
+            <div class="column zero input-x-gradient">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 0.png"
+                    alt="Zebrafish with 0 Mutations, Input X Gradient"
+                  />
+                </div>
+              </div>
+              <div class="column zero input-x-gradient">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 1.png"
+                    alt="Zebrafish with 0 Mutations, Input X Gradient"
+                  />
+                </div>
+              </div>
+              <div class="column zero input-x-gradient">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 2.png"
+                    alt="Zebrafish with 0 Mutations, Input X Gradient"
+                  />
+                </div>
+              </div>
+              <div class="column zero input-x-gradient">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 3.png"
+                      alt="Zebrafish with 0 Mutations, Input X Gradient"
+                    />
+                  </div>
+              </div>
+            <!-- Integrated Gradients -->
+            <div class="column zero integrated-gradients">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 0.png"
+                    alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                  />
+                </div>
+              </div>
+              <div class="column zero integrated-gradients">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 1.png"
+                    alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                  />
+                </div>
+              </div>
+              <div class="column zero integrated-gradients">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 2.png"
+                    alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                  />
+                </div>
+              </div>
+              <div class="column zero integrated-gradients">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 3.png"
+                      alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                    />
+                  </div>
+              </div>
+            <!-- Saliency-->
+            <div class="column zero saliency">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 0.png"
+                    alt="Zebrafish with 0 Mutations, Saliency"
+                  />
+                </div>
+              </div>
+            <div class="column zero saliency">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 1.png"
+                    alt="Zebrafish with 0 Mutations, Saliency"
+                  />
+                </div>
+              </div>
+            <div class="column zero saliency">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 2.png"
+                    alt="Zebrafish with 0 Mutations, Saliency"
+                  />
+                </div>
+              </div>
+            <div class="column zero saliency">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 3.png"
+                      alt="Zebrafish with 0 Mutations, Saliency"
+                    />
+                  </div>
+              </div>
+
+            <!-- Class 1 -->
+            <!-- Deconvolution -->
+            <div class="column one deconvolution">
+              <div class="content">
+                <img
+                src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 0.png"
+                  alt="Zebrafish with 1 Mutation, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column one deconvolution">
+              <div class="content">
+                <img
+                src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 1.png"
+                alt="Zebrafish with 1 Mutation, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column one deconvolution">
+              <div class="content">
+                <img
+                    src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 2.png"
+                    alt="Zebrafish with 1 Mutation, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column one deconvolution">
+                <div class="content">
+                  <img
+                  src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 3.png"
+                  alt="Zebrafish with 1 Mutation, Deconvolution"
+                  />
+                </div>
+            </div>
+            <!-- Deeplift -->
+            <div class="column one deeplift">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 0.png"
+                    alt="Zebrafish with 1 Mutation, Deeplift"
+                  />
+                </div>
+              </div>
+              <div class="column one deeplift">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 1.png"
+                    alt="Zebrafish with 1 Mutation, Deeplift"
+                  />
+                </div>
+              </div>
+              <div class="column one deeplift">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 2.png"
+                    alt="Zebrafish with 1 Mutation, Deeplift"
+                  />
+                </div>
+              </div>
+              <div class="column one deeplift">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 3.png"
+                      alt="Zebrafish with 1 Mutation, Deeplift"
+                    />
+                  </div>
+              </div>
+            <!-- Guided Backprop -->
+            <div class="column one guided-backprop">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 0.png"
+                    alt="Zebrafish with 1 Mutation, Guided Backprop"
+                  />
+                </div>
+              </div>
+              <div class="column one guided-backprop">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 1.png"
+                    alt="Zebrafish with 1 Mutation, Guided Backprop"
+                  />
+                </div>
+              </div>
+              <div class="column one guided-backprop">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 2.png"
+                    alt="Zebrafish with 1 Mutation, Guided Backprop"
+                  />
+                </div>
+              </div>
+              <div class="column one guided-backprop">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 3.png"
+                      alt="Zebrafish with 1 Mutation, Guided Backprop"
+                    />
+                  </div>
+              </div>
+            <!-- Input X Gradient-->
+            <div class="column one input-x-gradient">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 0.png"
+                    alt="Zebrafish with 1 Mutation, Input X Gradient"
+                  />
+                </div>
+              </div>
+              <div class="column one input-x-gradient">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 1.png"
+                    alt="Zebrafish with 1 Mutation, Input X Gradient"
+                  />
+                </div>
+              </div>
+              <div class="column one input-x-gradient">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 2.png"
+                    alt="Zebrafish with 1 Mutation, Input X Gradient"
+                  />
+                </div>
+              </div>
+              <div class="column one input-x-gradient">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 3.png"
+                      alt="Zebrafish with 1 Mutation, Input X Gradient"
+                    />
+                  </div>
+              </div>
+            <!-- Integrated Gradients -->
+            <div class="column one integrated-gradients">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 0.png"
+                    alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                  />
+                </div>
+              </div>
+              <div class="column one integrated-gradients">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 1.png"
+                    alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                  />
+                </div>
+              </div>
+              <div class="column one integrated-gradients">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 2.png"
+                    alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                  />
+                </div>
+              </div>
+              <div class="column one integrated-gradients">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 3.png"
+                      alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                    />
+                  </div>
+              </div>
+            <!-- Saliency-->
+            <div class="column one saliency">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 0.png"
+                    alt="Zebrafish with 1 Mutation, Saliency"
+                  />
+                </div>
+              </div>
+              <div class="column one saliency">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 1.png"
+                    alt="Zebrafish with 1 Mutation, Saliency"
+                  />
+                </div>
+              </div>
+              <div class="column one saliency">
+                <div class="content">
+                  <img
+                    src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 2.png"
+                    alt="Zebrafish with 1 Mutation, Saliency"
+                  />
+                </div>
+              </div>
+              <div class="column one saliency">
+                  <div class="content">
+                    <img
+                      src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 3.png"
+                      alt="Zebrafish with 1 Mutation, Saliency"
+                    />
+                  </div>
+              </div>
+           <!-- Class 2 -->
+           <!-- Deconvolution -->
+            <div class="column two deconvolution">
+              <div class="content">
+                <img
+                src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 0.png"
+                alt="Zebrafish with 2 Mutations, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column two deconvolution">
+              <div class="content">
+                <img
+                src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 1.png"
+                alt="Zebrafish with 2 Mutations, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column two deconvolution">
+              <div class="content">
+                <img
+                src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 2.png"
+                alt="Zebrafish with 2 Mutations, Deconvolution"
+                />
+              </div>
+            </div>
+            <div class="column two deconvolution">
+                <div class="content">
+                  <img
+                  src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 3.png"
+                  alt="Zebrafish with 2 Mutations, Deconvolution"
+                  />
+                </div>
+            </div>
+            <!-- Deeplift -->
+          <div class="column two deeplift">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 0.png"
+                alt="Zebrafish with 2 Mutations, Deeplift"
+              />
+            </div>
+          </div>
+          <div class="column two deeplift">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 1.png"
+                alt="Zebrafish with 2 Mutations, Deeplift"
+              />
+            </div>
+          </div>
+          <div class="column two deeplift">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 2.png"
+                alt="Zebrafish with 2 Mutations, Deeplift"
+              />
+            </div>
+          </div>
+          <div class="column two deeplift">
+              <div class="content">
+                <img
+                  src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 3.png"
+                  alt="Zebrafish with 2 Mutations, Deeplift"
+                />
+              </div>
+          </div>
+          <!-- Guided Backprop -->
+          <div class="column two guided-backprop">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 0.png"
+                alt="Zebrafish with 2 Mutations, Guided Backprop"
+              />
+            </div>
+          </div>
+          <div class="column two guided-backprop">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 1.png"
+                alt="Zebrafish with 2 Mutations, Guided Backprop"
+              />
+            </div>
+          </div>
+          <div class="column two guided-backprop">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 2.png"
+                alt="Zebrafish with 2 Mutations, Guided Backprop"
+              />
+            </div>
+          </div>
+          <div class="column two guided-backprop">
+              <div class="content">
+                <img
+                  src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 3.png"
+                  alt="Zebrafish with 2 Mutations, Guided Backprop"
+                />
+              </div>
+          </div>
+          <!-- Input X Gradient-->
+          <div class="column two input-x-gradient">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 0.png"
+                alt="Zebrafish with 2 Mutations, Input X Gradient"
+              />
+            </div>
+          </div>
+          <div class="column two input-x-gradient">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 1.png"
+                alt="Zebrafish with 2 Mutations, Input X Gradient"
+              />
+            </div>
+          </div>
+          <div class="column two input-x-gradient">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 2.png"
+                alt="Zebrafish with 2 Mutations, Input X Gradient"
+              />
+            </div>
+          </div>
+          <div class="column two input-x-gradient">
+              <div class="content">
+                <img
+                  src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 3.png"
+                  alt="Zebrafish with 2 Mutations, Input X Gradient"
+                />
+              </div>
+          </div>
+          <!-- Integrated Gradients -->
+          <div class="column two integrated-gradients">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 0.png"
+                alt="Zebrafish with 2 Mutations, Integrated Gradients"
+              />
+            </div>
+          </div>
+          <div class="column two integrated-gradients">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 1.png"
+                alt="Zebrafish with 2 Mutations, Integrated Gradients"
+              />
+            </div>
+          </div>
+          <div class="column two integrated-gradients">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 2.png"
+                alt="Zebrafish with 2 Mutations, Integrated Gradients"
+              />
+            </div>
+          </div>
+          <div class="column two integrated-gradients">
+              <div class="content">
+                <img
+                  src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 3.png"
+                  alt="Zebrafish with 2 Mutations, Integrated Gradients"
+                />
+              </div>
+          </div>
+           <!-- Saliency-->
+           <div class="column two saliency">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 0.png"
+                alt="Zebrafish with 2 Mutations, Saliency"
+              />
+            </div>
+          </div>
+          <div class="column two saliency">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 1.png"
+                alt="Zebrafish with 2 Mutations, Saliency"
+              />
+            </div>
+          </div>
+          <div class="column two saliency">
+            <div class="content">
+              <img
+                src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 2.png"
+                alt="Zebrafish with 2 Mutations, Saliency"
+              />
+            </div>
+          </div>
+          <div class="column two saliency">
+              <div class="content">
+                <img
+                  src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 3.png"
+                  alt="Zebrafish with 2 Mutations, Saliency"
+                />
+              </div>
+          </div>
+          <!-- END GRID -->
+        </div>
+        <!-- END GALLERY CONTAINER -->
+      </section>
+
+      <!-- Project Breakdown -->
+      <section class="block-project-breakdown" id="project-breakdown">
+        <div class="container-title">
+          <div class="section-title">Project Breakdown</div>
+          <div class="square-section">
+            <div class="square-item">
+              <div class="square-item-content">
+                <div class="number">1</div>
+                <hr />
+                <div class="square-text">
+                  <span>Image Classification</span>
+                  <br />
+                  <p class="square-description">
+                    ML model is trained to classsify images of zebrafish treated
+                    with 0, 1, or 2 mutations
+                  </p>
+                  <hr />
+                  <div class="members">
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">Alireza Havaeishamsabadi</span>
+                    </div>
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">Kevin Peng</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="square-item">
+              <div class="square-item-content">
+                <div class="number">2</div>
+                <hr />
+                <div class="square-text">
+                  <span>Feature Attribution</span>
+                  <br />
+                  <p class="square-description">
+                    Highlights the areas of the image that dominates the
+                    classifier's decision-making process
+                  </p>
+                  <hr />
+                  <div class="members">
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">John Long</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="square-item">
+              <div class="square-item-content">
+                <div class="number">3</div>
+                <hr />
+                <div class="square-text">
+                  <span>User Interface</span>
+                  <br />
+                  <p class="square-description">
+                    Webpage that displays interactive UMAPs of Image
+                    Classification and Feature Attribution, and a gallery after
+                    Feature Attribution
+                  </p>
+                  <hr />
+                  <div class="members">
+                    <div class="member-block">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="user-icon"
+                      >
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path
+                          d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"
+                        />
+                      </svg>
+                      <span class="member-name">Leila Jadoon</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Code -->
+      <section class="block-code" id="code">
+        <div class="container-title">
+          <div class="section-title">Code</div>
+          <div class="square-section">
+            <div class="square-item">
+              <a
+                href="https://github.com/Leila-Jadoon/MFAC/blob/main/Classifier/pytorch_fish_classifier.ipynb"
+              >
+                <div class="square-item-content">Pytorch Fish Classifier</div>
+              </a>
+            </div>
+
+            <div class="square-item">
+              <a
+                href="https://github.com/Leila-Jadoon/MFAC/blob/main/Feature-Attribution/Fish-Attribution/Full_Integrated_Gradients_Attribution_Generation.ipynb"
+              >
+                <div class="square-item-content">
+                  Full Integrated Gradients Attribution Generation
+                </div>
+              </a>
+            </div>
+
+            <div class="square-item">
+              <a
+                href="https://github.com/Leila-Jadoon/MFAC/blob/main/Feature-Attribution/Fish-Attribution/Full_Interactive_Integrated_Gradients.ipynb"
+              >
+                <div class="square-item-content">
+                  Full Interactive Integrated Gradients
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- END MAIN CONTAINER -->
+    <footer>
+      <div class="contact">
+        <p>CONTACT US</p>
+        <hr />
+        <p>
+          <a href="mailto: ahavaeishamsabadi@ucdavis.edu"
+            >Alireza Havaeishamsabadi</a
+          >
+        </p>
+        <p>
+          <a href="mailto: jzlong@ucdavis.edu">John Long</a>
+        </p>
+        <p>
+          <a href="mailto: kepeng@ucdavis.edu">Kevin Peng</a>
+        </p>
+        <p>
+          <a href="mailto: ljjadoon@ucdavis.edu">Leila Jadoon</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Javascript Files -->
+    <script src="js/gallery.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
