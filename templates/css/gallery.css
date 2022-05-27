@@ -1,13 +1,20 @@
-/* .gallery-container{
+.gallery-container{
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: center;
-} */
+  align-items: center;
+}
 
 .gallery-filter-menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.image-angle {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 2%;
 }
 
 /* Center website */

@@ -66,3 +66,4 @@ if (btnContainer2 !== null) {
 
 // TODO: fix active button display - could be js or css problem
 // TODO: add function to filter by mutation before filtering by attribution - or make them compounding somehow 
+// TODO: click to show zoomed image feature
