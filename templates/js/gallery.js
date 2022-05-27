@@ -39,15 +39,30 @@ function removeClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-let btnContainer = document.getElementById("myBtnContainer");
-if (btnContainer !== null) {
-	let btns = btnContainer.getElementsByClassName("btn");
+let btnContainer1 = document.getElementById("mutation-filter");
+if (btnContainer1 !== null) {
+	let btns = btnContainer1.getElementsByClassName("mutation-btn");
 	for (let i = 0; i < btns.length; i++) {
 		btns[i].addEventListener("click", function () {
-			var current = document.getElementsByClassName("active");
-			current[0].className = current[0].className.replace(" active", "");
-			this.className += " active";
+			var current = document.getElementsByClassName("mutation-active");
+			current[0].className = current[0].className.replace(" mutation-active", "");
+			this.className += " mutation-active";
 		});
 	}	
 }
 
+// Add active class to the current button (highlight it)
+let btnContainer2 = document.getElementById("attribution-filter");
+if (btnContainer2 !== null) {
+	let btns = btnContainer2.getElementsByClassName("attribution-btn");
+	for (let i = 0; i < btns.length; i++) {
+		btns[i].addEventListener("click", function () {
+			var current = document.getElementsByClassName("attribution-active");
+			current[0].className = current[0].className.replace(" attribution-active", "");
+			this.className += " attribution-active";
+		});
+	}	
+}
+
+// TODO: fix active button display - could be js or css problem
+// TODO: add function to filter by mutation before filtering by attribution - or make them compounding somehow 

@@ -184,39 +184,42 @@
           </div>
         </div>
         <div class="gallery-container">
-          <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')">
-              Show All Classes
-            </button>
-            <button class="btn" onclick="filterSelection('zero')">
-              0 Mutations
-            </button>
-            <button class="btn" onclick="filterSelection('one')">
-              1 Mutation
-            </button>
-            <button class="btn" onclick="filterSelection('two')">
-              2 Mutations
-            </button>
-          </div>
-          <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('deconvolution')">
-                Deconvolution
-            </button>
-            <button class="btn" onclick="filterSelection('deeplift')">
-                Deeplift
-            </button>
-            <button class="btn" onclick="filterSelection('guided-backprop')">
-                Guided Backprop
-            </button>
-            <button class="btn" onclick="filterSelection('input-x-gradient')">
-                Input X Gradient
-            </button>
-            <button class="btn" onclick="filterSelection('integrated-gradients')">
-                Integrated Gradients
-            </button>
-            <button class="btn" onclick="filterSelection('saliency')">
-                Saliency
-            </button>
+            <div class="gallery-filter-menu">
+                <div id="mutation-filter">
+                    <button class="mutation-btn mutation-active" onclick="filterSelection('all')">
+                    Show All Classes
+                    </button>
+                    <button class="mutation-btn" onclick="filterSelection('zero')">
+                    0 Mutations
+                    </button>
+                    <button class="mutation-btn" onclick="filterSelection('one')">
+                    1 Mutation
+                    </button>
+                    <button class="mutation-btn" onclick="filterSelection('two')">
+                    2 Mutations
+                    </button>
+                </div>
+                
+                <div id="attribution-filter">
+                    <button class="attribution-btn attribution-active" onclick="filterSelection('deconvolution')">
+                        Deconvolution
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('deeplift')">
+                        Deeplift
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('guided-backprop')">
+                        Guided Backprop
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('input-x-gradient')">
+                        Input X Gradient
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('integrated-gradients')">
+                        Integrated Gradients
+                    </button>
+                    <button class="attribution-btn" onclick="filterSelection('saliency')">
+                        Saliency
+                    </button>
+                </div>
           </div>
 
           <!-- Grid -->
@@ -525,7 +528,7 @@
             <div class="column one input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 0.png"
+                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 0.png"
                     alt="Zebrafish with 1 Mutation, Input X Gradient"
                   />
                 </div>
@@ -533,7 +536,7 @@
               <div class="column one input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 1.png"
+                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 1.png"
                     alt="Zebrafish with 1 Mutation, Input X Gradient"
                   />
                 </div>
@@ -541,7 +544,7 @@
               <div class="column one input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 2.png"
+                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Input X Gradient"
                   />
                 </div>
@@ -549,7 +552,7 @@
               <div class="column one input-x-gradient">
                   <div class="content">
                     <img
-                      src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 3.png"
+                      src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 3.png"
                       alt="Zebrafish with 1 Mutation, Input X Gradient"
                     />
                   </div>

@@ -1,6 +1,12 @@
-.gallery-container{
+/* .gallery-container{
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+} */
+
+.gallery-filter-menu {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -32,14 +38,21 @@ img {
 
 /* Style the buttons */
 
-#myBtnContainer{
+#mutation-filter{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   margin: 0px 20px 20px 0px;
 }
 
-.btn {
+#attribution-filter{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0px 20px 20px 0px;
+}
+
+.mutation-btn, .attribution-btn {
   border: 2px solid #1B4965;
   border-radius: 10px;
   outline: none;
@@ -51,12 +64,12 @@ img {
 }
 
 /* Add a grey background color on mouse-over */
-.btn:hover {
+.mutation-btn:hover, .attribution-btn:hover  {
   background-color: white;
 }
 
 /* Add a dark background color to the active button */
-.btn.active {
+.mutation-btn:active, .attribution-btn:active {
   background-color: #1B4965;
   color: white;
 }
