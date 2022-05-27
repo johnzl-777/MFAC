@@ -22,7 +22,7 @@ img {
 /* Hide columns by default */
 .column {
   display: none; 
-  width: 33%;
+  width: 25%;
 }
 
 /* The "show" class is added to the filtered elements */
