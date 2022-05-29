@@ -75,10 +75,6 @@ function filter(f) {
 				let b = document.getElementById("01");
 				b.classList.add("attribution-active");
 			}
-			else if (filters[i].classList.contains("deeplift")) {
-				let b = document.getElementById("02");
-				b.classList.add("attribution-active");
-			}
 			else if (filters[i].classList.contains("guided-backprop")) {
 				let b = document.getElementById("03");
 				b.classList.add("attribution-active");
@@ -135,10 +131,6 @@ function filter(f) {
 		else if (filters[i].classList.contains("two")) {
 			if (filters[i].classList.contains("deconvolution")) {
 				let b = document.getElementById("21");
-				b.classList.add("attribution-active");
-			}
-			else if (filters[i].classList.contains("deeplift")) {
-				let b = document.getElementById("22");
 				b.classList.add("attribution-active");
 			}
 			else if (filters[i].classList.contains("guided-backprop")) {
