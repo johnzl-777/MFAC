@@ -1,69 +1,231 @@
-// Execute the function and show all columns
-filterSelection("all"); 
+function showAll() {
+	// Complete reset: show all columns
+	let c = document.getElementsByClassName("column");
+	for (let i = 0; i < c.length; i++) {
+		c[i].classList.add("show");
+	}
+	removeAllActiveMutation();
+	let zero = document.getElementById("all-btn");
+	zero.classList.add("mutation-active");
+	hideAttributionButtons();
+}
 
-function filterSelection(c) {
-	let x, i;
-	x = document.getElementsByClassName("column");
-	if (c == "all") 
-		c = "";
-	// Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-	for (i = 0; i < x.length; i++) {
-		removeClass(x[i], "show");
-		if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+
+// filter by class
+function filter(f) {
+
+	if (f == "all") 
+		f = "";
+
+	// Complete reset: hide all columns
+	let c = document.getElementsByClassName("column");
+	for (let i = 0; i < c.length; i++) {
+		c[i].classList.remove("show");
+	}
+
+	// on click of zero: show all attribution buttons for zero mutation and hide rest
+	if (f == "zero") {
+		hideAttributionButtons();
+		let b = document.getElementById("attributions-zero");
+		b.classList.remove("hide");
+		b.classList.add("show");
+		showImageAngle();
+		removeAllActiveMutation();
+		let zero = document.getElementById("zero-btn");
+		zero.classList.add("mutation-active");
+	}
+
+	// on click of one: show all attribution buttons for one mutation and hide rest
+	else if (f == "one") {
+		hideAttributionButtons();
+		let b = document.getElementById("attributions-one");
+		b.classList.remove("hide");
+		b.classList.add("show");
+		showImageAngle();
+		removeAllActiveMutation();
+		let zero = document.getElementById("one-btn");
+		zero.classList.add("mutation-active");
+	}
+	// on click of two: show all attribution buttons for two mutation and hide rest
+	else if (f == "two") {
+		hideAttributionButtons();
+		let b = document.getElementById("attributions-two");
+		b.classList.remove("hide");
+		b.classList.add("show");
+		showImageAngle();
+		removeAllActiveMutation();
+		let zero = document.getElementById("two-btn");
+		zero.classList.add("mutation-active");
+	}	
+
+
+	// filters by specified attribution
+	let filters = document.getElementsByClassName(f);
+	for (let i = 0; i < filters.length; i++) {
+		filters[i].classList.remove("show");
+		if (filters[i].className.indexOf(f) > -1) { 
+			filters[i].classList.add("show");
+		}
+
+		// show active on chosen attribution button
+		removeAllActiveAttribution();
+		if (filters[i].classList.contains("zero")) {
+			removeAllActiveAttribution();
+			if (filters[i].classList.contains("deconvolution")) {
+				let b = document.getElementById("01");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("deeplift")) {
+				let b = document.getElementById("02");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("guided-backprop")) {
+				let b = document.getElementById("03");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("input-x-gradient")) {
+				let b = document.getElementById("04");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("integrated-gradients")) {
+				let b = document.getElementById("05");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("saliency")) {
+				if (f == ("zero saliency")) {
+					let b = document.getElementById("06");
+					b.classList.add("attribution-active");
+				}
+			}
+			else {
+				removeAllActiveAttribution();
+			}
+		}
+		else if (filters[i].classList.contains("one")) {
+			if (filters[i].classList.contains("deconvolution")) {
+				let b = document.getElementById("11");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("deeplift")) {
+				let b = document.getElementById("12");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("guided-backprop")) {
+				let b = document.getElementById("13");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("input-x-gradient")) {
+				let b = document.getElementById("14");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("integrated-gradients")) {
+				let b = document.getElementById("15");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("saliency")) {
+				if (f == ("one saliency")) {
+					let b = document.getElementById("16");
+					b.classList.add("attribution-active");
+				}
+			}
+			else {
+				removeAllActiveAttribution();
+			}
+		}
+		else if (filters[i].classList.contains("two")) {
+			if (filters[i].classList.contains("deconvolution")) {
+				let b = document.getElementById("21");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("deeplift")) {
+				let b = document.getElementById("22");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("guided-backprop")) {
+				let b = document.getElementById("23");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("input-x-gradient")) {
+				let b = document.getElementById("24");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("integrated-gradients")) {
+				let b = document.getElementById("25");
+				b.classList.add("attribution-active");
+			}
+			else if (filters[i].classList.contains("saliency")) {
+				if (f == ("two saliency")) {
+					let b = document.getElementById("26");
+					b.classList.add("attribution-active");
+				}
+			}
+			else {
+				removeAllActiveAttribution();
+			}
+		}
+		else {
+			removeAllActiveAttribution();
+		}
+	}
+	showImageAngle()
+}
+
+function hideAttributionButtons() {
+	let btn = document.getElementsByClassName("attribution-filter");
+	for (let i = 0; i < btn.length; i++) {
+		btn[i].classList.remove("show");
+		btn[i].classList.add("hide");
 	}
 }
 
-// Show filtered elements
-function addClass(element, name) {
-	let i, arr1, arr2;
-	arr1 = element.className.split(" ");
-	arr2 = name.split(" ");
-	for (i = 0; i < arr2.length; i++) {
-		if (arr1.indexOf(arr2[i]) == -1) {
-			element.className += " " + arr2[i];
-		}
-  }
-}
-
-// Hide elements that are not selected
-function removeClass(element, name) {
-	let i, arr1, arr2;
-	arr1 = element.className.split(" ");
-	arr2 = name.split(" ");
-	for (i = 0; i < arr2.length; i++) {
-		while (arr1.indexOf(arr2[i]) > -1) {
-		arr1.splice(arr1.indexOf(arr2[i]), 1);
-		}
+function showHide(elementArray) {
+	for (let i = 0; i < elementArray.length; i++) {
+		elementArray[i].classList.remove("hide");
+		elementArray[i].classList.add("show");
 	}
-	element.className = arr1.join(" ");
 }
 
-// Add active class to the current button (highlight it)
-let btnContainer1 = document.getElementById("mutation-filter");
-if (btnContainer1 !== null) {
-	let btns = btnContainer1.getElementsByClassName("mutation-btn");
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener("click", function () {
-			var current = document.getElementsByClassName("mutation-active");
-			current[0].className = current[0].className.replace(" mutation-active", "");
-			this.className += " mutation-active";
-		});
-	}	
+function showImageAngle() {
+	let b = document.getElementsByClassName("image-angle");
+	showHide(b);
 }
 
-// Add active class to the current button (highlight it)
-let btnContainer2 = document.getElementById("attribution-filter");
-if (btnContainer2 !== null) {
-	let btns = btnContainer2.getElementsByClassName("attribution-btn");
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener("click", function () {
-			var current = document.getElementsByClassName("attribution-active");
-			current[0].className = current[0].className.replace(" attribution-active", "");
-			this.className += " attribution-active";
-		});
-	}	
+function removeAllActiveMutation() {
+	let mutationBtns = document.getElementsByClassName("mutation-btn");
+	for (let i = 0; i < mutationBtns.length; i++) {
+		mutationBtns[i].classList.remove("mutation-active");
+	}
 }
 
-// TODO: fix active button display - could be js or css problem
-// TODO: add function to filter by mutation before filtering by attribution - or make them compounding somehow 
-// TODO: click to show zoomed image feature
+function removeAllActiveAttribution() {
+	let attributionBtns = document.getElementsByClassName("attribution-btn");
+	for (let i = 0; i < attributionBtns.length; i++) {
+		attributionBtns[i].classList.remove("attribution-active");
+	}
+}
+
+// -------------------------------------------------------------------
+// Code from https://code-boxx.com/image-zoom-css-javascript/#sec-zoom
+window.onload = () => {
+	// (A) GET LIGHTBOX & ALL .ZOOMD IMAGES
+	let all = document.getElementsByClassName("zoomD"),
+		lightbox = document.getElementById("lightbox");
+   
+	// (B) CLICK TO SHOW IMAGE IN LIGHTBOX
+	// * SIMPLY CLONE INTO LIGHTBOX & SHOW
+	if (all.length>0) { for (let i of all) {
+	  i.onclick = () => {
+		let clone = i.cloneNode();
+		clone.className = "";
+		lightbox.innerHTML = "";
+		lightbox.appendChild(clone);
+		lightbox.className = "show";
+	  };
+	}}
+   
+	// (C) CLICK TO CLOSE LIGHTBOX
+	lightbox.onclick = () => {
+	  lightbox.className = "";
+	};
+  };
+// -------------------------------------------------------------------

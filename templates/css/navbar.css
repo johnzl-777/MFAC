@@ -9,8 +9,7 @@
   }
 
   .floatingNav {
-      width: calc(150vh - 100px); 
-      /* width: 0%; */
+      width: 100%; 
       border-radius: 2px;
       box-shadow: 0px 1px 10px #5FA8D3;
     }
@@ -43,14 +42,14 @@
 }
 
 @media only screen and (min-width: 769px) {
-  .hamburger {
+  #hamburger {
     display: none;
   }
 }
 
 @media only screen and (max-width: 768px) {
   /* Hamburger menu */
-  .hamburger {
+  #hamburger {
     position: fixed;
     z-index: 100;
     top: 1rem;
@@ -60,7 +59,7 @@
     cursor: pointer;
   }
 
-  .hamburger svg {
+  #hamburger svg {
     height: 50px;
     width: 50px;
   }
@@ -87,9 +86,13 @@
   .menu .tablinks {
     color: white;
     text-decoration: none;
+
     font-weight: 300;
     font-size: 18px;
     padding: 2% 2%;
+  }
+  .tablinks:hover {
+    color:#5FA8D3;
   }
 
   .showMenu {

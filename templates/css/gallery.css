@@ -5,19 +5,11 @@
   align-items: center;
 }
 
-.gallery-filter-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .image-angle {
   text-align: center;
   font-size: 30px;
   margin-bottom: 2%;
 }
-
-/* Center website */
 
 .flex-container-grid {
   display: flex;
@@ -32,54 +24,97 @@ img {
   width: 100%;
 }
 
-/* Hide columns by default */
 .column {
   display: none; 
   width: 25%;
 }
 
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
-/* Style the buttons */
-
-#mutation-filter{
+#mutation-filter, .attribution-filter{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 0px 20px 20px 0px;
-}
-
-#attribution-filter{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  align-items: center;
   margin: 0px 20px 20px 0px;
 }
 
 .mutation-btn, .attribution-btn {
-  border: 2px solid #1B4965;
   border-radius: 10px;
   outline: none;
   padding: 12px 16px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
   background-color: #CAE9FF;
   cursor: pointer;
+  padding: 20px;
 }
 
-/* Add a grey background color on mouse-over */
 .mutation-btn:hover, .attribution-btn:hover  {
   background-color: white;
 }
 
-/* Add a dark background color to the active button */
-.mutation-btn:active, .attribution-btn:active {
+.mutation-active, .attribution-active {
   background-color: #1B4965;
   color: white;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* ------------------------------------------------------------------- */
+/* Code from https://code-boxx.com/image-zoom-css-javascript/#sec-zoom */
+/* (A) LIGHTBOX BACKGROUND */
+#lightbox {
+  /* (A1) COVERS FULLSCREEN */
+  position: fixed; z-index: 999;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+ 
+  /* (A2) BACKGROUND */
+  background: rgba(0, 0, 0, 0.5);
+ 
+  /* (A3) CENTER IMAGE ON SCREEN */
+  display: flex;
+  align-items: center;
+  align-items: center;
+ 
+  /* (A4) HIDDEN BY DEFAULT */
+  visibility: hidden;
+  opacity: 0;
+ 
+  /* (A5) SHOW/HIDE ANIMATION */
+  transition: opacity ease 0.4s;
+}
+ 
+/* (A6) TOGGLE VISIBILITY */
+#lightbox.show {
+  visibility: visible;
+  opacity: 1;
+}
+ 
+/* (B) LIGHTBOX IMAGE */
+#lightbox img {
+  /* (B1) DIMENSIONS */
+  width: 100%;
+  height: auto;
+ 
+  /* (B2) IMAGE FIT */
+  /* contain | cover | fill | scale-down */
+  object-fit: cover;
+}
+
+.zoomA { 
+  /* (B) ANIMATE ZOOM */
+  /* ease | ease-in | ease-out | linear */
+  transition: transform ease-in-out 0.3s;
+}
+ 
+/* (C) ZOOM ON HOVER */
+.zoomA:hover { transform: scale(1.2); }
+/* --------------------------------------------------- */
 
 /* -------------------------------------------------- */
 /* Screen Size */
@@ -88,6 +123,9 @@ img {
   .column {
     width: 45%;
     /* padding: 1%; */
+  }
+  .image-angle {
+    display: none;
   }
 }
 

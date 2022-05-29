@@ -51,8 +51,8 @@ function topFunction() {
 //-------------------------------------------------------------------------
 // Shrink navbar to hamburger menu on smaller screens
 const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".menuItem");
-const hamburger= document.querySelector(".hamburger");
+const menuItems = document.getElementsByClassName("menuItem");
+const hamburger= document.getElementById("hamburger");
 const closeIcon= document.querySelector(".close-icon");
 const menuIcon = document.querySelector(".menu-icon");
 
@@ -68,4 +68,14 @@ function toggleMenu() {
   }
 }
 
+function untoggleMenu() {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+}
+
 hamburger.addEventListener("click", toggleMenu);
+
+for (let i = 0; i < menuItems.length; i++) {
+  menuItems[i].addEventListener("click", untoggleMenu);
+}
