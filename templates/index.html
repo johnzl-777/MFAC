@@ -42,17 +42,11 @@
     <!-- Nav Bar -->
     <nav class="tab menu" id="navbar">
       <a class="tablinks menuItem" href="#classification">Classification</a>
-      <a class="tablinks menuItem" href="#featureAttribution"
-        >Feature Attribution</a
-      >
+      <a class="tablinks menuItem" href="#featureAttribution">Feature Attribution</a>
       <a class="tablinks menuItem" href="#gallery">Gallery</a>
-      <a class="tablinks menuItem" href="#project-breakdown"
-        >Project Breakdown</a
-      >
-      <a class="tablinks menuItem" href="#code">Code</a>
-      <a class="tablinks menuItem" href="https://github.com/Leila-Jadoon/MFAC"
-        >GitHub</a
-      >
+      <a class="tablinks menuItem" href="#matrices">Matrices</a>
+      <a class="tablinks menuItem" href="#project-breakdown">Project Breakdown</a>
+      <a class="tablinks menuItem" href="https://github.com/Leila-Jadoon/MFAC">GitHub</a>
     </nav>
     <button id="hamburger">
       <svg
@@ -174,12 +168,12 @@
         <div class="container-title">
           <div class="section-title">Gallery</div>
           <div class="section-subtitle">
-            Filter Through Images Based on the Number of Mutations
+            Filter Through Images Based on the Number of Mutations and Attribution Method
           </div>
           <div class="background">
             <p class="background-section">Background</p>
             <p>
-              This gallery shows the images after applying Feature Attribution.
+              This gallery shows the images after applying Feature Attribution. Hover or click on an image to zoom.
             </p>
           </div>
         </div>
@@ -948,6 +942,68 @@
         <!-- END GALLERY CONTAINER -->
       </section>
 
+      <!-- Confusion Matrices -->
+      <section class="block-matrices" id="matrices">
+        <div class="container-title">
+          <div class="section-title">Confusion Matrices</div>
+          <div class="section-subtitle">
+            Filter Through Confusion Matrices for Different Attribution Methods
+          </div>
+          <div class="background">
+            <p class="background-section">Background</p>
+            <p>
+              This gallery shows confusion matrices after applying Feature Attribution. Hover on an image to zoom.
+            </p>
+          </div>
+        </div>
+        <div class="matrix-container">      
+            <!-- Deconvolution -->
+            <div class="matrix-column matrix-deconvolution">
+                <div class="content">
+                <div>Deconvolution</div>
+                    <img
+                        src="matrices-images/deconvolution/Index_0.png"
+                        alt="Confusion Matrix, Deconvolution"
+                        class="zoomA"
+                    />
+                </div>
+            </div>
+            <!-- Guided Backprop -->
+            <div class="matrix-column matrix-backprop">
+                <div class="content">
+                    <div>Deconvolution</div>
+                    <img
+                        src="matrices-images/guided-backprop/Index_0.png"
+                        alt="Confusion Matrix, Guided Backprop"
+                        class="zoomA"
+                    />
+                </div>
+            </div>
+            <!-- Input X Gradient -->
+            <div class="matrix-column matrix-input-x-gradient">
+                <div class="content">
+                    <div>Input X Gradient</div>
+                    <img
+                        src="matrices-images/input-x-gradient/Index_0.png"
+                        alt="Confusion Matrix, Input X Gradient"
+                        class="zoomA"
+                    />
+                </div>
+            </div>
+            <!-- Saliency -->
+            <div class="matrix-column matrix-saliency">
+                <div class="content">
+                    <div>Saliency</div>
+                    <img
+                        src="matrices-images/saliency/Index_0.png"
+                        alt="Confusion Matrix, Saliency"
+                        class="zoomA"
+                    />
+                </div>
+            </div>
+        </div>   
+      </section>   
+      
       <!-- Project Breakdown -->
       <section class="block-project-breakdown" id="project-breakdown">
         <div class="container-title">
@@ -1056,42 +1112,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Code -->
-      <section class="block-code" id="code">
-        <div class="container-title">
-          <div class="section-title">Code</div>
-          <div class="square-section">
-            <div class="square-item">
-              <a
-                href="https://github.com/Leila-Jadoon/MFAC/blob/main/Classifier/pytorch_fish_classifier.ipynb"
-              >
-                <div class="square-item-content">Pytorch Fish Classifier</div>
-              </a>
-            </div>
-
-            <div class="square-item">
-              <a
-                href="https://github.com/Leila-Jadoon/MFAC/blob/main/Feature-Attribution/Fish-Attribution/Full_Integrated_Gradients_Attribution_Generation.ipynb"
-              >
-                <div class="square-item-content">
-                  Full Integrated Gradients Attribution Generation
-                </div>
-              </a>
-            </div>
-
-            <div class="square-item">
-              <a
-                href="https://github.com/Leila-Jadoon/MFAC/blob/main/Feature-Attribution/Fish-Attribution/Full_Interactive_Integrated_Gradients.ipynb"
-              >
-                <div class="square-item-content">
-                  Full Interactive Integrated Gradients
-                </div>
-              </a>
             </div>
           </div>
         </div>
