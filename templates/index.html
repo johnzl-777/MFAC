@@ -54,7 +54,7 @@
         >GitHub</a
       >
     </nav>
-    <button class="hamburger">
+    <button id="hamburger">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -185,39 +185,80 @@
         </div>
         <div class="gallery-container">
             <div class="gallery-filter-menu">
+                <!-- Mutation Buttons -->
                 <div id="mutation-filter">
-                    <button class="mutation-btn mutation-active" onclick="filterSelection('all')">
-                    Show All Classes
+                    <button class="mutation-btn"  id="all-btn"onclick="showAll()">
+                        Show All Classes
                     </button>
-                    <button class="mutation-btn" onclick="filterSelection('zero')">
-                    0 Mutations
+                    <button class="mutation-btn" id="zero-btn" onclick="filter('zero')">
+                        0 Mutations
                     </button>
-                    <button class="mutation-btn" onclick="filterSelection('one')">
-                    1 Mutation
+                    <button class="mutation-btn" id="one-btn" onclick="filter('one')">
+                        1 Mutation
                     </button>
-                    <button class="mutation-btn" onclick="filterSelection('two')">
-                    2 Mutations
+                    <button class="mutation-btn" id="two-btn" onclick="filter('two')">
+                        2 Mutations
                     </button>
                 </div>
-                
-                
-                <div id="attribution-filter">
-                    <button class="attribution-btn attribution-active" onclick="filterSelection('deconvolution')">
+                       
+                <!-- Attribution Buttons -->
+                <div class="attribution-filter hide" id="attributions-zero">
+                    <button class="attribution-btn zero-btn" id="01" onclick="filter('zero deconvolution')">
                         Deconvolution
                     </button>
-                    <button class="attribution-btn" onclick="filterSelection('deeplift')">
+                    <button class="attribution-btn zero-btn" id="02" onclick="filter('zero deeplift')">
                         Deeplift
                     </button>
-                    <button class="attribution-btn" onclick="filterSelection('guided-backprop')">
+                    <button class="attribution-btn zero-btn" id="03" onclick="filter('zero guided-backprop')">
                         Guided Backprop
                     </button>
-                    <button class="attribution-btn" onclick="filterSelection('input-x-gradient')">
+                    <button class="attribution-btn zero-btn" id="04" onclick="filter('zero input-x-gradient')">
                         Input X Gradient
                     </button>
-                    <button class="attribution-btn" onclick="filterSelection('integrated-gradients')">
+                    <button class="attribution-btn zero-btn" id="05" onclick="filter('zero integrated-gradients')">
                         Integrated Gradients
                     </button>
-                    <button class="attribution-btn" onclick="filterSelection('saliency')">
+                    <button class="attribution-btn zero-btn" id="06" onclick="filter('zero saliency')">
+                        Saliency
+                    </button>
+                </div>
+                <div class="attribution-filter hide" id="attributions-one">
+                    <button class="attribution-btn one-btn" id="11" onclick="filter('one deconvolution')">
+                        Deconvolution
+                    </button>
+                    <button class="attribution-btn one-btn" id="12" onclick="filter('one deeplift')">
+                        Deeplift
+                    </button>
+                    <button class="attribution-btn one-btn" id="13" onclick="filter('one guided-backprop')">
+                        Guided Backprop
+                    </button>
+                    <button class="attribution-btn one-btn" id="14" onclick="filter('one input-x-gradient')">
+                        Input X Gradient
+                    </button>
+                    <button class="attribution-btn one-btn" id="15" onclick="filter('one integrated-gradients')">
+                        Integrated Gradients
+                    </button>
+                    <button class="attribution-btn one-btn" id="16" onclick="filter('one saliency')">
+                        Saliency
+                    </button>
+                </div>
+                <div class="attribution-filter hide" id="attributions-two">
+                    <button class="attribution-btn two-btn" id="21" onclick="filter('two deconvolution')">
+                        Deconvolution
+                    </button>
+                    <button class="attribution-btn two-btn" id="22" onclick="filter('two deeplift')">
+                        Deeplift
+                    </button>
+                    <button class="attribution-btn two-btn" id="23" onclick="filter('two guided-backprop')">
+                        Guided Backprop
+                    </button>
+                    <button class="attribution-btn two-btn" id="24" onclick="filter('two input-x-gradient')">
+                        Input X Gradient
+                    </button>
+                    <button class="attribution-btn two-btn" id="25" onclick="filter('two integrated-gradients')">
+                        Integrated Gradients
+                    </button>
+                    <button class="attribution-btn two-btn" id="26" onclick="filter('two saliency')">
                         Saliency
                     </button>
                 </div>
@@ -230,37 +271,43 @@
             <div class="column image-angle zero one two deconvolution deeplift guided-backprop input-x-gradient integrated-gradients saliency">Right</div>
             <div class="column image-angle zero one two deconvolution deeplift guided-backprop input-x-gradient integrated-gradients saliency">Underneath</div>
             <div class="column image-angle zero one two deconvolution deeplift guided-backprop input-x-gradient integrated-gradients saliency">Left</div>
+
+            <div id="lightbox"></div>
             <!-- Class 0 -->
             <!-- Deconvolution -->
             <div class="column zero deconvolution">
               <div class="content">
                 <img
-                  src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 0.png"
+                  src="gallery-images/class-0/deconvolution/Image Set_ 1 Image_ 0.png"
                   alt="Zebrafish with 0 Mutations, Deconvolution"
+                  class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column zero deconvolution">
               <div class="content">
                 <img
-                  src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 1.png"
+                  src="gallery-images/class-0/deconvolution/Image Set_ 1 Image_ 1.png"
                   alt="Zebrafish with 0 Mutations, Deconvolution"
+                  class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column zero deconvolution">
               <div class="content">
                 <img
-                  src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 2.png"
+                  src="gallery-images/class-0/deconvolution/Image Set_ 1 Image_ 2.png"
                   alt="Zebrafish with 0 Mutations, Deconvolution"
+                  class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column zero deconvolution">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/deconvolution/Image Set_ 1 Image_ 3.png"
+                    src="gallery-images/class-0/deconvolution/Image Set_ 1 Image_ 3.png"
                     alt="Zebrafish with 0 Mutations, Deconvolution"
+                    class="zoomD zoomA"
                   />
                 </div>
             </div>
@@ -268,32 +315,36 @@
             <div class="column zero deeplift">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 0.png"
+                    src="gallery-images/class-0/deeplift/Image Set_ 1 Image_ 0.png"
                     alt="Zebrafish with 0 Mutations, Deeplift"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero deeplift">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 1.png"
+                    src="gallery-images/class-0/deeplift/Image Set_ 1 Image_ 1.png"
                     alt="Zebrafish with 0 Mutations, Deeplift"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero deeplift">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 2.png"
+                    src="gallery-images/class-0/deeplift/Image Set_ 1 Image_ 2.png"
                     alt="Zebrafish with 0 Mutations, Deeplift"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero deeplift">
                   <div class="content">
                     <img
-                      src="gallery-images/class 0/deeplift/Image Set_ 1 Image_ 3.png"
+                      src="gallery-images/class-0/deeplift/Image Set_ 1 Image_ 3.png"
                       alt="Zebrafish with 0 Mutations, Deeplift"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -301,32 +352,36 @@
             <div class="column zero guided-backprop">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 0.png"
+                    src="gallery-images/class-0/guided-backprop/Image Set_ 1 Image_ 0.png"
                     alt="Zebrafish with 0 Mutations, Guided Backprop"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero guided-backprop">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 1.png"
+                    src="gallery-images/class-0/guided-backprop/Image Set_ 1 Image_ 1.png"
                     alt="Zebrafish with 0 Mutations, Guided Backprop"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero guided-backprop">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 2.png"
+                    src="gallery-images/class-0/guided-backprop/Image Set_ 1 Image_ 2.png"
                     alt="Zebrafish with 0 Mutations, Guided Backprop"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero guided-backprop">
                   <div class="content">
                     <img
-                      src="gallery-images/class 0/guided-backprop/Image Set_ 1 Image_ 3.png"
+                      src="gallery-images/class-0/guided-backprop/Image Set_ 1 Image_ 3.png"
                       alt="Zebrafish with 0 Mutations, Guided Backprop"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -334,32 +389,36 @@
             <div class="column zero input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 0.png"
+                    src="gallery-images/class-0/input-x-gradient/Image Set_ 1 Image_ 0.png"
                     alt="Zebrafish with 0 Mutations, Input X Gradient"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 1.png"
+                    src="gallery-images/class-0/input-x-gradient/Image Set_ 1 Image_ 1.png"
                     alt="Zebrafish with 0 Mutations, Input X Gradient"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 2.png"
+                    src="gallery-images/class-0/input-x-gradient/Image Set_ 1 Image_ 2.png"
                     alt="Zebrafish with 0 Mutations, Input X Gradient"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero input-x-gradient">
                   <div class="content">
                     <img
-                      src="gallery-images/class 0/input-x-gradient/Image Set_ 1 Image_ 3.png"
+                      src="gallery-images/class-0/input-x-gradient/Image Set_ 1 Image_ 3.png"
                       alt="Zebrafish with 0 Mutations, Input X Gradient"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -367,32 +426,36 @@
             <div class="column zero integrated-gradients">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 0.png"
+                    src="gallery-images/class-0/integrated-gradients/Image Set_ 1 Image_ 0.png"
                     alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero integrated-gradients">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 1.png"
+                    src="gallery-images/class-0/integrated-gradients/Image Set_ 1 Image_ 1.png"
                     alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero integrated-gradients">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 2.png"
+                    src="gallery-images/class-0/integrated-gradients/Image Set_ 1 Image_ 2.png"
                     alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column zero integrated-gradients">
                   <div class="content">
                     <img
-                      src="gallery-images/class 0/integrated-gradients/Image Set_ 1 Image_ 3.png"
+                      src="gallery-images/class-0/integrated-gradients/Image Set_ 1 Image_ 3.png"
                       alt="Zebrafish with 0 Mutations, Integrated Gradients"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -400,32 +463,36 @@
             <div class="column zero saliency">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 0.png"
+                    src="gallery-images/class-0/saliency/Image Set_ 1 Image_ 0.png"
                     alt="Zebrafish with 0 Mutations, Saliency"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
             <div class="column zero saliency">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 1.png"
+                    src="gallery-images/class-0/saliency/Image Set_ 1 Image_ 1.png"
                     alt="Zebrafish with 0 Mutations, Saliency"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
             <div class="column zero saliency">
                 <div class="content">
                   <img
-                    src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 2.png"
+                    src="gallery-images/class-0/saliency/Image Set_ 1 Image_ 2.png"
                     alt="Zebrafish with 0 Mutations, Saliency"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
             <div class="column zero saliency">
                   <div class="content">
                     <img
-                      src="gallery-images/class 0/saliency/Image Set_ 1 Image_ 3.png"
+                      src="gallery-images/class-0/saliency/Image Set_ 1 Image_ 3.png"
                       alt="Zebrafish with 0 Mutations, Saliency"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -435,32 +502,36 @@
             <div class="column one deconvolution">
               <div class="content">
                 <img
-                src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 0.png"
+                src="gallery-images/class-1/deconvolution/Image Set_ 0 Image_ 0.png"
                   alt="Zebrafish with 1 Mutation, Deconvolution"
+                  class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column one deconvolution">
               <div class="content">
                 <img
-                src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 1.png"
+                src="gallery-images/class-1/deconvolution/Image Set_ 0 Image_ 1.png"
                 alt="Zebrafish with 1 Mutation, Deconvolution"
+                class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column one deconvolution">
               <div class="content">
                 <img
-                    src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 2.png"
+                    src="gallery-images/class-1/deconvolution/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Deconvolution"
+                    class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column one deconvolution">
                 <div class="content">
                   <img
-                  src="gallery-images/class 1/deconvolution/Image Set_ 0 Image_ 3.png"
+                  src="gallery-images/class-1/deconvolution/Image Set_ 0 Image_ 3.png"
                   alt="Zebrafish with 1 Mutation, Deconvolution"
+                  class="zoomD zoomA"
                   />
                 </div>
             </div>
@@ -468,32 +539,36 @@
             <div class="column one deeplift">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 0.png"
+                    src="gallery-images/class-1/deeplift/Image Set_ 0 Image_ 0.png"
                     alt="Zebrafish with 1 Mutation, Deeplift"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one deeplift">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 1.png"
+                    src="gallery-images/class-1/deeplift/Image Set_ 0 Image_ 1.png"
                     alt="Zebrafish with 1 Mutation, Deeplift"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one deeplift">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 2.png"
+                    src="gallery-images/class-1/deeplift/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Deeplift"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one deeplift">
                   <div class="content">
                     <img
-                      src="gallery-images/class 1/deeplift/Image Set_ 0 Image_ 3.png"
+                      src="gallery-images/class-1/deeplift/Image Set_ 0 Image_ 3.png"
                       alt="Zebrafish with 1 Mutation, Deeplift"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -501,32 +576,36 @@
             <div class="column one guided-backprop">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 0.png"
+                    src="gallery-images/class-1/guided-backprop/Image Set_ 0 Image_ 0.png"
                     alt="Zebrafish with 1 Mutation, Guided Backprop"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one guided-backprop">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 1.png"
+                    src="gallery-images/class-1/guided-backprop/Image Set_ 0 Image_ 1.png"
                     alt="Zebrafish with 1 Mutation, Guided Backprop"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one guided-backprop">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 2.png"
+                    src="gallery-images/class-1/guided-backprop/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Guided Backprop"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one guided-backprop">
                   <div class="content">
                     <img
-                      src="gallery-images/class 1/guided-backprop/Image Set_ 0 Image_ 3.png"
+                      src="gallery-images/class-1/guided-backprop/Image Set_ 0 Image_ 3.png"
                       alt="Zebrafish with 1 Mutation, Guided Backprop"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -534,32 +613,36 @@
             <div class="column one input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 0.png"
+                    src="gallery-images/class-1/input-x-gradient/Image Set_ 0 Image_ 0.png"
                     alt="Zebrafish with 1 Mutation, Input X Gradient"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 1.png"
+                    src="gallery-images/class-1/input-x-gradient/Image Set_ 0 Image_ 1.png"
                     alt="Zebrafish with 1 Mutation, Input X Gradient"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one input-x-gradient">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 2.png"
+                    src="gallery-images/class-1/input-x-gradient/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Input X Gradient"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one input-x-gradient">
                   <div class="content">
                     <img
-                      src="gallery-images/class 1/input-x-gradient/Image Set_ 0 Image_ 3.png"
+                      src="gallery-images/class-1/input-x-gradient/Image Set_ 0 Image_ 3.png"
                       alt="Zebrafish with 1 Mutation, Input X Gradient"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -567,32 +650,36 @@
             <div class="column one integrated-gradients">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 0.png"
+                    src="gallery-images/class-1/integrated-gradients/Image Set_ 0 Image_ 0.png"
                     alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one integrated-gradients">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 1.png"
+                    src="gallery-images/class-1/integrated-gradients/Image Set_ 0 Image_ 1.png"
                     alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one integrated-gradients">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 2.png"
+                    src="gallery-images/class-1/integrated-gradients/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one integrated-gradients">
                   <div class="content">
                     <img
-                      src="gallery-images/class 1/integrated-gradients/Image Set_ 0 Image_ 3.png"
+                      src="gallery-images/class-1/integrated-gradients/Image Set_ 0 Image_ 3.png"
                       alt="Zebrafish with 1 Mutation, Integrated Gradients"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -600,32 +687,36 @@
             <div class="column one saliency">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 0.png"
+                    src="gallery-images/class-1/saliency/Image Set_ 0 Image_ 0.png"
                     alt="Zebrafish with 1 Mutation, Saliency"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one saliency">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 1.png"
+                    src="gallery-images/class-1/saliency/Image Set_ 0 Image_ 1.png"
                     alt="Zebrafish with 1 Mutation, Saliency"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one saliency">
                 <div class="content">
                   <img
-                    src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 2.png"
+                    src="gallery-images/class-1/saliency/Image Set_ 0 Image_ 2.png"
                     alt="Zebrafish with 1 Mutation, Saliency"
+                    class="zoomD zoomA"
                   />
                 </div>
               </div>
               <div class="column one saliency">
                   <div class="content">
                     <img
-                      src="gallery-images/class 1/saliency/Image Set_ 0 Image_ 3.png"
+                      src="gallery-images/class-1/saliency/Image Set_ 0 Image_ 3.png"
                       alt="Zebrafish with 1 Mutation, Saliency"
+                      class="zoomD zoomA"
                     />
                   </div>
               </div>
@@ -634,32 +725,36 @@
             <div class="column two deconvolution">
               <div class="content">
                 <img
-                src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 0.png"
-                alt="Zebrafish with 2 Mutations, Deconvolution"
+                    src="gallery-images/class-2/deconvolution/Image Set_ 6 Image_ 0.png"
+                    alt="Zebrafish with 2 Mutations, Deconvolution"
+                    class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column two deconvolution">
               <div class="content">
                 <img
-                src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 1.png"
-                alt="Zebrafish with 2 Mutations, Deconvolution"
+                    src="gallery-images/class-2/deconvolution/Image Set_ 6 Image_ 1.png"
+                    alt="Zebrafish with 2 Mutations, Deconvolution"
+                    class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column two deconvolution">
               <div class="content">
                 <img
-                src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 2.png"
-                alt="Zebrafish with 2 Mutations, Deconvolution"
+                    src="gallery-images/class-2/deconvolution/Image Set_ 6 Image_ 2.png"
+                    alt="Zebrafish with 2 Mutations, Deconvolution"
+                    class="zoomD zoomA"
                 />
               </div>
             </div>
             <div class="column two deconvolution">
                 <div class="content">
                   <img
-                  src="gallery-images/class 2/deconvolution/Image Set_ 6 Image_ 3.png"
-                  alt="Zebrafish with 2 Mutations, Deconvolution"
+                    src="gallery-images/class-2/deconvolution/Image Set_ 6 Image_ 3.png"
+                    alt="Zebrafish with 2 Mutations, Deconvolution"
+                    class="zoomD zoomA"
                   />
                 </div>
             </div>
@@ -667,32 +762,36 @@
           <div class="column two deeplift">
             <div class="content">
               <img
-                src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 0.png"
+                src="gallery-images/class-2/deeplift/Image Set_ 6 Image_ 0.png"
                 alt="Zebrafish with 2 Mutations, Deeplift"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two deeplift">
             <div class="content">
               <img
-                src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 1.png"
+                src="gallery-images/class-2/deeplift/Image Set_ 6 Image_ 1.png"
                 alt="Zebrafish with 2 Mutations, Deeplift"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two deeplift">
             <div class="content">
               <img
-                src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 2.png"
+                src="gallery-images/class-2/deeplift/Image Set_ 6 Image_ 2.png"
                 alt="Zebrafish with 2 Mutations, Deeplift"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two deeplift">
               <div class="content">
                 <img
-                  src="gallery-images/class 2/deeplift/Image Set_ 6 Image_ 3.png"
+                  src="gallery-images/class-2/deeplift/Image Set_ 6 Image_ 3.png"
                   alt="Zebrafish with 2 Mutations, Deeplift"
+                  class="zoomD zoomA"
                 />
               </div>
           </div>
@@ -700,32 +799,36 @@
           <div class="column two guided-backprop">
             <div class="content">
               <img
-                src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 0.png"
+                src="gallery-images/class-2/guided-backprop/Image Set_ 6 Image_ 0.png"
                 alt="Zebrafish with 2 Mutations, Guided Backprop"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two guided-backprop">
             <div class="content">
               <img
-                src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 1.png"
+                src="gallery-images/class-2/guided-backprop/Image Set_ 6 Image_ 1.png"
                 alt="Zebrafish with 2 Mutations, Guided Backprop"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two guided-backprop">
             <div class="content">
               <img
-                src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 2.png"
+                src="gallery-images/class-2/guided-backprop/Image Set_ 6 Image_ 2.png"
                 alt="Zebrafish with 2 Mutations, Guided Backprop"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two guided-backprop">
               <div class="content">
                 <img
-                  src="gallery-images/class 2/guided-backprop/Image Set_ 6 Image_ 3.png"
+                  src="gallery-images/class-2/guided-backprop/Image Set_ 6 Image_ 3.png"
                   alt="Zebrafish with 2 Mutations, Guided Backprop"
+                  class="zoomD zoomA"
                 />
               </div>
           </div>
@@ -733,32 +836,36 @@
           <div class="column two input-x-gradient">
             <div class="content">
               <img
-                src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 0.png"
+                src="gallery-images/class-2/input-x-gradient/Image Set_ 6 Image_ 0.png"
                 alt="Zebrafish with 2 Mutations, Input X Gradient"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two input-x-gradient">
             <div class="content">
               <img
-                src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 1.png"
+                src="gallery-images/class-2/input-x-gradient/Image Set_ 6 Image_ 1.png"
                 alt="Zebrafish with 2 Mutations, Input X Gradient"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two input-x-gradient">
             <div class="content">
               <img
-                src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 2.png"
+                src="gallery-images/class-2/input-x-gradient/Image Set_ 6 Image_ 2.png"
                 alt="Zebrafish with 2 Mutations, Input X Gradient"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two input-x-gradient">
               <div class="content">
                 <img
-                  src="gallery-images/class 2/input-x-gradient/Image Set_ 6 Image_ 3.png"
+                  src="gallery-images/class-2/input-x-gradient/Image Set_ 6 Image_ 3.png"
                   alt="Zebrafish with 2 Mutations, Input X Gradient"
+                  class="zoomD zoomA"
                 />
               </div>
           </div>
@@ -766,32 +873,36 @@
           <div class="column two integrated-gradients">
             <div class="content">
               <img
-                src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 0.png"
+                src="gallery-images/class-2/integrated-gradients/Image Set_ 6 Image_ 0.png"
                 alt="Zebrafish with 2 Mutations, Integrated Gradients"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two integrated-gradients">
             <div class="content">
               <img
-                src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 1.png"
+                src="gallery-images/class-2/integrated-gradients/Image Set_ 6 Image_ 1.png"
                 alt="Zebrafish with 2 Mutations, Integrated Gradients"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two integrated-gradients">
             <div class="content">
               <img
-                src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 2.png"
+                src="gallery-images/class-2/integrated-gradients/Image Set_ 6 Image_ 2.png"
                 alt="Zebrafish with 2 Mutations, Integrated Gradients"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two integrated-gradients">
               <div class="content">
                 <img
-                  src="gallery-images/class 2/integrated-gradients/Image Set_ 6 Image_ 3.png"
+                  src="gallery-images/class-2/integrated-gradients/Image Set_ 6 Image_ 3.png"
                   alt="Zebrafish with 2 Mutations, Integrated Gradients"
+                  class="zoomD zoomA"
                 />
               </div>
           </div>
@@ -799,32 +910,36 @@
            <div class="column two saliency">
             <div class="content">
               <img
-                src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 0.png"
+                src="gallery-images/class-2/saliency/Image Set_ 6 Image_ 0.png"
                 alt="Zebrafish with 2 Mutations, Saliency"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two saliency">
             <div class="content">
               <img
-                src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 1.png"
+                src="gallery-images/class-2/saliency/Image Set_ 6 Image_ 1.png"
                 alt="Zebrafish with 2 Mutations, Saliency"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two saliency">
             <div class="content">
               <img
-                src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 2.png"
+                src="gallery-images/class-2/saliency/Image Set_ 6 Image_ 2.png"
                 alt="Zebrafish with 2 Mutations, Saliency"
+                class="zoomD zoomA"
               />
             </div>
           </div>
           <div class="column two saliency">
               <div class="content">
                 <img
-                  src="gallery-images/class 2/saliency/Image Set_ 6 Image_ 3.png"
+                  src="gallery-images/class-2/saliency/Image Set_ 6 Image_ 3.png"
                   alt="Zebrafish with 2 Mutations, Saliency"
+                  class="zoomD zoomA"
                 />
               </div>
           </div>
