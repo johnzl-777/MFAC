@@ -290,11 +290,7 @@ footer {
   }
 
   .square-section {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    width:50%;
+    width: 80%;
     margin: auto;
   }
 
