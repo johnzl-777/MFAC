@@ -37,6 +37,10 @@ img {
   margin: 0px 20px 20px 0px;
 }
 
+.attribution-filter {
+  justify-content: center;
+}
+
 .mutation-btn, .attribution-btn {
   border-radius: 10px;
   outline: none;
@@ -45,10 +49,12 @@ img {
   background-color: #CAE9FF;
   cursor: pointer;
   padding: 20px;
+  color:#2A2A2C;
 }
 
 .mutation-btn:hover, .attribution-btn:hover  {
   background-color: white;
+  color: #2A2A2C;
 }
 
 .mutation-active, .attribution-active {
@@ -61,7 +67,8 @@ img {
 }
 
 .show {
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 /* ------------------------------------------------------------------- */

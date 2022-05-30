@@ -3,10 +3,24 @@ function showAll() {
 	let c = document.getElementsByClassName("column");
 	for (let i = 0; i < c.length; i++) {
 		c[i].classList.add("show");
+		c[i].classList.remove("hide");
 	}
 	removeAllActiveMutation();
-	let zero = document.getElementById("all-btn");
-	zero.classList.add("mutation-active");
+	let all = document.getElementById("all-btn");
+	all.classList.add("mutation-active");
+	hideAttributionButtons();
+}
+
+function hideAll() {
+	// Complete reset: hide all columns
+	let c = document.getElementsByClassName("column");
+	for (let i = 0; i < c.length; i++) {
+		c[i].classList.add("hide");
+		c[i].classList.remove("show");
+	}
+	removeAllActiveMutation();
+	let none = document.getElementById("none-btn");
+	none.classList.add("mutation-active");
 	hideAttributionButtons();
 }
 
