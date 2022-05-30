@@ -1,0 +1,54 @@
+body {
+    margin-top: 10%;    
+    background: #5FA8D3;  
+    font-family: "proxima-nova", sans-serif;
+}
+
+.umap-plot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    color: white;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+  }
+
+.sub-subtitle {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+}
+
+.bk-root {
+    margin-top: 2%;
+}
+
+/* -------------------------------------------------- */
+/* Screen Size */
+/* Laptop Screen Size */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 60px;
+      }
+}
+
+/* Tablet Screen Size */
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+      }
+}
