@@ -52,6 +52,7 @@ body {
 
 .container-title {
   display: inline;
+  margin: 1%;
 }
 
 .block-feature-attribution {
@@ -209,6 +210,7 @@ span {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  text-align: center;
 }
 
 a.umap-plot {
