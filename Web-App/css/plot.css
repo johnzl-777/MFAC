@@ -37,6 +37,37 @@ body {
     margin-top: 2%;
 }
 
+.legend-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+#zero {
+    background-color: #5e4fa2;
+    color: white;
+    padding: 20px;
+    margin: 2%;
+    text-align: center;
+}
+#one {
+    background-color: #3288bd;
+    color: white;
+    padding: 20px;
+    margin: 2%;
+    text-align: center;
+}
+#two {
+    background-color: #66c2a5;
+    color: white;
+    padding: 20px;
+    margin: 2%;
+    text-align: center;
+}
+
+
+
+
 /* -------------------------------------------------- */
 /* Screen Size */
 /* Laptop Screen Size */

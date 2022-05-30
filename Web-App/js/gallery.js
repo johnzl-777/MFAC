@@ -24,7 +24,6 @@ function hideAll() {
 	hideAttributionButtons();
 }
 
-
 // filter by class
 function filter(f) {
 
