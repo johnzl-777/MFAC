@@ -1,0 +1,101 @@
+@media only screen and (min-width: 769px) {
+  /* Style the tab */
+  nav {
+      overflow: hidden;
+      background-color: #CAE9FF;
+      position: fixed;
+      width: 100%;
+      top: 0;
+  }
+
+  .floatingNav {
+      width: 100%; 
+      border-radius: 2px;
+      box-shadow: 0px 1px 10px #5FA8D3;
+    }
+    
+  /* Style the buttons that are used to open the tab content */
+  .tablinks {
+      background-color: inherit; 
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 18px;
+      color: #2A2A2C;
+  }
+
+  /* Change background color of buttons on hover */
+  .tablinks:hover {
+  background-color: #5FA8D3;
+  }
+
+  .tablinks:visited {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* Hamburger menu */
+  #hamburger {
+    position: fixed;
+    z-index: 100;
+    top: 1rem;
+    right: 1rem;
+    padding: 4px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  #hamburger svg {
+    height: 50px;
+    width: 50px;
+  }
+
+  .close-icon {
+    display: none;
+  }
+
+  .menu {
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: #2A2A2C;
+    list-style: none;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu .tablinks {
+    color: white;
+    text-decoration: none;
+
+    font-weight: 300;
+    font-size: 18px;
+    padding: 2% 2%;
+  }
+  .tablinks:hover {
+    color:#5FA8D3;
+  }
+
+  .showMenu {
+    transform: translateY(0);
+  }
+}

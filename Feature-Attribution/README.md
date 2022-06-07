@@ -1,5 +1,6 @@
 # Feature Attribution
 
+
 For the FINAL Feature Attribution pipeline, please refer here: https://github.com/Leila-Jadoon/MFAC/tree/main/Feature-Attribution
 
 ## Credits
@@ -13,7 +14,6 @@ The ResNet Repeated ReLU Bug fix code was obtained from https://github.com/shikh
 Training ResNet against MNIST for earlier Feature Attribution tests came from: https://zablo.net/blog/post/pytorch-resnet-mnist-jupyter-notebook-2021/
 
 
-
 ## How This Repository is Organized
 
 All work from the old attribution pipeline has since been moved into an "Old-Pipeline" folder for record keeping in the "Fish-Attribution" Folder. More recent work can be found in the prefixed "model..." folders where more feature attribution methods were tested.
@@ -23,8 +23,16 @@ NOTE: The lack of content in model1e-05500.5_april_4.pt is because most of it ma
 ## (OLD) Setting up the Full Integrated Gradients Pipeline
 
 __SEE `OLD-PIPELINE FOLDER` FOR RELEVANT WORK__
+=======
+Please refer to the associated documentation for more information.
 
-The pipeline of going from the Zebrafish dataset to interactive UMAP plot is split among two Jupyter Notebooks, the first being meant to be run on Google Colab and the second being meant to run on your local machine due to the fact that Colab fails to generate the Bokeh-based UMAP plot.
+
+The notebooks should be run in the following order:
+1. Label Generation
+2. Feature Attribution Data Generation
+3. Feature Attribution Image Generation
+4. Feature Attribution Bokeh Generation
+
 
 The notebooks are (inside of the "Fish-Attribution" Folder):
 * Full_Integrated_Gradients_Attribution_Generation.ipynb
@@ -74,3 +82,4 @@ This model uses EfficientNet as its base, allowing for DeepLift and ResNet incom
 
 This is mostly just results from tests, the notebooks that were here became the final notebooks mentioned in the very beginning of this README.
 
+=======

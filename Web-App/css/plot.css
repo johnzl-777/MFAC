@@ -1,0 +1,85 @@
+body {
+    margin-top: 10%;    
+    background: #5FA8D3;  
+    font-family: "proxima-nova", sans-serif;
+}
+
+.umap-plot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 10px;
+    color: white;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+  }
+
+.sub-subtitle {
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+}
+
+.bk-root {
+    margin-top: 2%;
+}
+
+.legend-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+}
+
+#zero {
+    background-color: #5e4fa2;
+    color: white;
+    padding: 20px;
+    margin: 2%;
+    text-align: center;
+}
+#one {
+    background-color: #3288bd;
+    color: white;
+    padding: 20px;
+    margin: 2%;
+    text-align: center;
+}
+#two {
+    background-color: #66c2a5;
+    color: white;
+    padding: 20px;
+    margin: 2%;
+    text-align: center;
+}
+
+
+
+
+/* -------------------------------------------------- */
+/* Screen Size */
+/* Laptop Screen Size */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 60px;
+      }
+}
+
+/* Tablet Screen Size */
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+      }
+}

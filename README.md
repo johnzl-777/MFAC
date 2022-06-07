@@ -6,4 +6,4 @@ The following project is designed to classify Zebrafish with genetic mutations b
 
 * Feature-Attribution
 * Classification
-* Front-End
+* Web-App

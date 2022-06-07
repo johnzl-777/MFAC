@@ -1,0 +1,5 @@
+data/x_subset.tensor
+__pycache__/app.cpython-39.pyc
+data/y_subset.tensor
+.env
+.DS_Store
